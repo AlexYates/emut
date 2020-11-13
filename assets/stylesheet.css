@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove TailwindCSSs outline. */
+* {
+  outline: none !important;
+}
+
+html {
+  /* Prevent unwanted horizontal layout shift. */
+  @apply overflow-x-hidden overflow-y-scroll;
+}
