@@ -1,0 +1,6 @@
+User-agent: Googlebot
+Disallow: /account/
+Disallow: /cart/
+Disallow: /not-found/
+Disallow: /success/
+Disallow: /wishlist/

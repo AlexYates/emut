@@ -97,8 +97,6 @@ export default {
     PhMagnifyingGlass,
     PhShoppingCart,
     PhUser,
-    Pip: () => import('@/components/Pip.vue'),
-    Spacer: () => import('@/components/Spacer.vue'),
   },
   computed: {
     ...mapGetters('wishlist', {

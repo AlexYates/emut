@@ -33,10 +33,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+
 export default {
-  components: {
-    Spacer: () => import('@/components/Spacer.vue'),
-  },
   computed: {
     ...mapGetters('search', {
       searchGet: 'search',

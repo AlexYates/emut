@@ -32,7 +32,6 @@ export default {
     PhMagnifyingGlass,
     PhShoppingCart,
     PhUser,
-    Spacer: () => import('@/components/Spacer.vue'),
   },
   computed: {
     links() {

@@ -1,6 +1,6 @@
 <template>
   <button
-    class="bg-gray-800 border flex items-center justify-center p-2 rounded-lg shadow-lg text-lg text-white"
+    class="bg-gray-900 border flex items-center justify-center p-2 rounded-lg shadow-lg text-lg text-white"
     @click.prevent="toggle(product)"
   >
     <PhShoppingCart :weight="weight" />
@@ -16,7 +16,6 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   components: {
     PhShoppingCart,
-    Spacer: () => import('@/components/Spacer.vue'),
   },
   props: {
     product: {

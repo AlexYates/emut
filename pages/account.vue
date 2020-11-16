@@ -9,21 +9,32 @@
       <Spacer />
       <RegisterForm class="md:w-1/2" />
     </div>
+    <div v-else class="flex">
+      <div
+        class="bg-gray-100 border flex flex-col p-2 rounded-lg shadow-lg w-full"
+      >
+        <h2 class="font-semibold mb-2 text-lg">Account details</h2>
+        <p>E-mail: {{ account.email }}</p>
+        <p>Password: {{ account.password }}</p>
+        <p>UUID: {{ account.uuid }}</p>
+      </div>
+    </div>
   </main>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  components: {
-    RegisterForm: () => import('@/components/RegisterForm.vue'),
-    SignInForm: () => import('@/components/SignInForm.vue'),
-    Spacer: () => import('@/components/Spacer.vue'),
-  },
   computed: {
     ...mapGetters('account', {
+      account: 'account',
       signedIn: 'signedIn',
+    }),
+  },
+  methods: {
+    ...mapActions('account', {
+      signIn: 'signIn',
     }),
   },
 }

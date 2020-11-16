@@ -6,8 +6,8 @@ const lorem = new LoremIpsum()
 const createImage = () => ({
   description: lorem.generateWords(5),
   height: 100,
-  small: 'https://placehold.it/1x1',
-  large: 'https://placehold.it/2x2',
+  small: '1x1.png',
+  large: '500x500.png',
   width: 100,
 })
 

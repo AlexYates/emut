@@ -16,11 +16,6 @@
 
 <script>
 export default {
-  components: {
-    CartToggleButton: () => import('@/components/CartToggleButton.vue'),
-    PictureImages: () => import('@/components/PictureImages.vue'),
-    WishlistToggleButton: () => import('@/components/WishlistToggleButton.vue'),
-  },
   props: {
     product: {
       required: true,

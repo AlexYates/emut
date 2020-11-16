@@ -1,6 +1,6 @@
 <template>
   <RouterLink
-    class="bg-gray-800 border flex items-center justify-center px-4 py-2 rounded-lg text-lg text-white"
+    class="bg-gray-900 border flex items-center justify-center px-4 py-2 rounded-lg text-lg text-white"
     to="/checkout"
   >
     <PhCreditCard />

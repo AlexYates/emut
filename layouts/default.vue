@@ -41,13 +41,6 @@
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  components: {
-    Footing: () => import('@/components/Footing.vue'),
-    Heading: () => import('@/components/Heading.vue'),
-    Navigation: () => import('@/components/Navigation.vue'),
-    Overlay: () => import('@/components/Overlay.vue'),
-    Search: () => import('@/components/Search.vue'),
-  },
   computed: {
     ...mapGetters('navigation', {
       navigationActive: 'active',

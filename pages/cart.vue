@@ -13,15 +13,15 @@
       <div class="flex flex-col md:w-3/4">
         <ProductList :products="products" />
       </div>
-      <!--  -->
       <Spacer />
-      <!--  -->
-      <div class="flex p-2 w-full md:w-1/4">
+      <div
+        class="flex p-2 w-full md:w-1/4"
+        :class="{ 'items-start': products && products.length < 8 }"
+      >
         <div
-          class="border flex flex-col justify-start p-2 rounded-lg shadow-lg w-full"
+          class="bg-gray-100 border flex flex-col justify-start p-2 rounded-lg shadow-lg w-full"
         >
           <h2 class="font-semibold mb-4 text-lg">Checkout</h2>
-          <Spacer />
           <div class="flex flex-col w-full">
             <div class="flex items-center mb-1 w-full">
               <div class="flex w-1/2">Number of items</div>
@@ -48,15 +48,18 @@
           </div>
           <Spacer />
           <CheckoutLinkLarge />
-          <Spacer />
-          <Expander />
-          <div class="hidden md:flex">
-            <CheckoutLinkLarge class="w-full" />
-          </div>
+          <template v-if="products && products.length >= 8">
+            <Spacer />
+            <Expander />
+            <div class="hidden md:flex">
+              <CheckoutLinkLarge class="w-full" />
+            </div>
+          </template>
         </div>
       </div>
     </div>
     <EmptyMessage v-else :line="'Your cart is empty,'" />
+    <ProductSuggestionSection :products="productsSuggested" />
   </main>
 </template>
 
@@ -68,6 +71,9 @@ export default {
   computed: {
     ...mapGetters('cart', {
       products: 'all',
+    }),
+    ...mapGetters('products', {
+      productsAll: 'all',
     }),
     cartCount() {
       return this.products ? this.products.length : 0
@@ -83,6 +89,9 @@ export default {
     },
     total() {
       return this.subTotal + this.deliveryTotal
+    },
+    productsSuggested() {
+      return this.productsAll.slice(16, 20)
     },
   },
   methods: {

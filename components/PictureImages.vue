@@ -1,11 +1,14 @@
 <template>
   <picture>
-    <source media="(min-width: 400px)" :srcset="images.large" />
+    <source
+      media="(min-width: 400px)"
+      :srcset="require(`~/assets/${images.large}`)"
+    />
     <img
       :alt="images.description"
       :class="classes"
       :height="images.height"
-      :src="images.small"
+      :src="require(`~/assets/${images.small}`)"
       :width="images.width"
     />
   </picture>
