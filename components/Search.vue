@@ -58,7 +58,7 @@ export default {
     }),
     deactivate() {
       this.$router.push({
-        path: 'products',
+        path: '/products',
         query: {
           title: this.searchGet,
         },
