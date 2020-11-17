@@ -1,3 +1,7 @@
+const {
+  colors: { black, gray, white }, // We only use the colours, the rest can be removed.
+} = require('tailwindcss/defaultTheme')
+
 module.exports = {
   future: {
     defaultLineHeights: true,
@@ -6,16 +10,10 @@ module.exports = {
     standardFontWeights: true,
   },
   theme: {
-    opacity: {
-      0:    '0',
-      12.5: '0.125',
-      25:   '0.25',
-      37.5: '0.375',
-      50:   '0.5',
-      62.5: '0.625',
-      75:   '0.75',
-      87.5: '0.875',
-      100:  '100',
+    colors: {
+      black,
+      gray,
+      white,
     },
   },
 }
