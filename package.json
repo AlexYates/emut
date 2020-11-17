@@ -10,7 +10,8 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:js:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "test": "jest"
+    "test": "jest",
+    "build:no-source": "nuxt build && del .nuxt/dist/**/*.js.map"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
