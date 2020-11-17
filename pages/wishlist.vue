@@ -20,14 +20,17 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('products', {
+    ...mapGetters('wishlist', {
       products: 'all',
+    }),
+    ...mapGetters('products', {
+      productsAll: 'all',
     }),
     wishlistCount() {
       return this.products ? this.products.length : 0
     },
     productsSuggested() {
-      return this.products.slice(16, 20)
+      return this.productsAll.slice(16, 20)
     },
   },
 }

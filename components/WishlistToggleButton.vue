@@ -4,18 +4,16 @@
     title="Toggle in wishlist"
     @click.prevent="toggle(product)"
   >
-    <PhHeart :weight="weight" />
+    <ImageSVG :src="PhHeart" />
   </button>
 </template>
 
 <script>
-import { PhHeart } from 'phosphor-vue'
 import { mapActions, mapGetters } from 'vuex'
 
+const PhHeart = require('../phosphor-icons/assets/duotone/heart-duotone.svg')
+
 export default {
-  components: {
-    PhHeart,
-  },
   props: {
     product: {
       required: true,
@@ -26,6 +24,9 @@ export default {
     ...mapGetters('wishlist', {
       exists: 'exists',
     }),
+    PhHeart() {
+      return PhHeart
+    },
     weight() {
       return this.exists(this.product.uuid) ? 'fill' : 'duotone'
     },

@@ -10,7 +10,7 @@
             navigationActivate()
           "
         >
-          <PhList />
+          <ImageSVG :src="PhList" />
         </button>
         <LazySpacer />
         <RouterLink
@@ -18,7 +18,7 @@
           title="View all our products"
           to="/products"
         >
-          <PhGift />
+          <ImageSVG :src="PhGift" />
         </RouterLink>
         <LazySpacer />
         <button
@@ -29,7 +29,7 @@
             searchActivate()
           "
         >
-          <PhMagnifyingGlass />
+          <ImageSVG :src="PhMagnifyingGlass" />
         </button>
       </div>
       <div class="flex items-center justify-center w-1/3">
@@ -41,7 +41,7 @@
           title="View and update products in your wishlist"
           to="/wishlist"
         >
-          <PhHeart />
+          <ImageSVG :src="PhHeart" />
           <LazyPip
             v-if="wishlistCount > 0"
             class="absolute -m-2 right-0 top-0"
@@ -56,7 +56,7 @@
           title="View and update products in your cart"
           to="/cart"
         >
-          <PhShoppingCart />
+          <ImageSVG :src="PhShoppingCart" />
           <LazyPip
             v-if="cartCount > 0"
             class="absolute -m-2 right-0 top-0"
@@ -71,7 +71,7 @@
           title="View and edit your account details"
           to="/account"
         >
-          <PhUser />
+          <ImageSVG :src="PhUser" />
         </RouterLink>
       </div>
     </div>
@@ -80,24 +80,15 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import {
-  PhGift,
-  PhHeart,
-  PhList,
-  PhMagnifyingGlass,
-  PhShoppingCart,
-  PhUser,
-} from 'phosphor-vue'
+
+const PhGift = require('../phosphor-icons/assets/duotone/gift-duotone.svg')
+const PhHeart = require('../phosphor-icons/assets/duotone/heart-duotone.svg')
+const PhList = require('../phosphor-icons/assets/duotone/list-duotone.svg')
+const PhMagnifyingGlass = require('../phosphor-icons/assets/duotone/magnifying-glass-duotone.svg')
+const PhShoppingCart = require('../phosphor-icons/assets/duotone/shopping-cart-duotone.svg')
+const PhUser = require('../phosphor-icons/assets/duotone/user-duotone.svg')
 
 export default {
-  components: {
-    PhGift,
-    PhHeart,
-    PhList,
-    PhMagnifyingGlass,
-    PhShoppingCart,
-    PhUser,
-  },
   computed: {
     ...mapGetters('wishlist', {
       wishlistAll: 'all',
@@ -105,6 +96,24 @@ export default {
     ...mapGetters('cart', {
       cartAll: 'all',
     }),
+    PhGift() {
+      return PhGift
+    },
+    PhHeart() {
+      return PhHeart
+    },
+    PhList() {
+      return PhList
+    },
+    PhMagnifyingGlass() {
+      return PhMagnifyingGlass
+    },
+    PhShoppingCart() {
+      return PhShoppingCart
+    },
+    PhUser() {
+      return PhUser
+    },
     wishlistCount() {
       return this.wishlistAll ? this.wishlistAll.length : 0
     },

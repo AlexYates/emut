@@ -4,18 +4,16 @@
     title="Toggle in cart"
     @click.prevent="toggle(product)"
   >
-    <PhShoppingCart :weight="weight" />
+    <ImageSVG :src="PhShoppingCart" />
   </button>
 </template>
 
 <script>
-import { PhShoppingCart } from 'phosphor-vue'
 import { mapActions, mapGetters } from 'vuex'
 
+const PhShoppingCart = require('../phosphor-icons/assets/duotone/shopping-cart-duotone.svg')
+
 export default {
-  components: {
-    PhShoppingCart,
-  },
   props: {
     product: {
       required: true,
@@ -26,6 +24,9 @@ export default {
     ...mapGetters('cart', {
       exists: 'exists',
     }),
+    PhShoppingCart() {
+      return PhShoppingCart
+    },
     weight() {
       return this.exists(this.product.uuid) ? 'fill' : 'duotone'
     },

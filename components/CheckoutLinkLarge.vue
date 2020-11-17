@@ -3,18 +3,20 @@
     class="bg-gray-900 border flex items-center justify-center px-4 py-2 rounded-lg text-lg text-white"
     to="/checkout"
   >
-    <PhCreditCard />
+    <ImageSVG :src="PhCreditCard" />
     <LazySpacer />
     Checkout
   </RouterLink>
 </template>
 
 <script>
-import { PhCreditCard } from 'phosphor-vue'
+const PhCreditCard = require('../phosphor-icons/assets/duotone/credit-card-duotone.svg')
 
 export default {
-  components: {
-    PhCreditCard,
+  computed: {
+    PhCreditCard() {
+      return PhCreditCard
+    },
   },
 }
 </script>
