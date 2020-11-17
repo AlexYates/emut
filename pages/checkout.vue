@@ -1,11 +1,11 @@
 <template>
   <main id="checkout" class="container flex flex-col flex-grow mx-auto">
-    <PageHeading>
+    <LazyPageHeading>
       Checkout
-      <Pip v-if="cartCount > 0" title="Number of products in checkout">
+      <LazyPip v-if="cartCount > 0" title="Number of products in checkout">
         {{ cartCount }}
-      </Pip>
-    </PageHeading>
+      </LazyPip>
+    </LazyPageHeading>
     <div v-if="products && products.length > 0" class="flex">
       <div class="p-2 w-1/2">
         <form
@@ -156,8 +156,8 @@
         </transition-group>
       </div>
     </div>
-    <EmptyMessage v-else :line="'Your checkout is empty,'" />
-    <ProductSuggestionSection :products="productsSuggested" />
+    <LazyEmptyMessage v-else :line="'Your checkout is empty,'" />
+    <LazyProductSuggestionSection :products="productsSuggested" />
   </main>
 </template>
 

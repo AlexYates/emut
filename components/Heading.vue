@@ -12,7 +12,7 @@
         >
           <PhList />
         </button>
-        <Spacer />
+        <LazySpacer />
         <RouterLink
           class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 rounded-full shadow-lg"
           title="View all our products"
@@ -20,7 +20,7 @@
         >
           <PhGift />
         </RouterLink>
-        <Spacer />
+        <LazySpacer />
         <button
           class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 rounded-full shadow-lg"
           title="Search all our products"
@@ -42,30 +42,30 @@
           to="/wishlist"
         >
           <PhHeart />
-          <Pip
+          <LazyPip
             v-if="wishlistCount > 0"
             class="absolute -m-2 right-0 top-0"
             title="Number of products in wishlist"
           >
             {{ wishlistCount }}
-          </Pip>
+          </LazyPip>
         </RouterLink>
-        <Spacer />
+        <LazySpacer />
         <RouterLink
           class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 relative rounded-full shadow-lg"
           title="View and update products in your cart"
           to="/cart"
         >
           <PhShoppingCart />
-          <Pip
+          <LazyPip
             v-if="cartCount > 0"
             class="absolute -m-2 right-0 top-0"
             title="Number of products in cart"
           >
             {{ cartCount }}
-          </Pip>
+          </LazyPip>
         </RouterLink>
-        <Spacer />
+        <LazySpacer />
         <RouterLink
           class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 rounded-full shadow-lg"
           title="View and edit your account details"

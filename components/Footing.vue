@@ -39,13 +39,10 @@
       <div class="flex items-end justify-end w-1/2">
         <ol class="flex flex-col">
           <li class="flex w-full">
-            <!-- class="bg-gray-100 border flex items-center justify-center m-2 p-2 rounded-full shadow-lg text-gray-900" -->
-            <!-- title="Get in contact and e-mail the author, Alex Yates" -->
             <a
               class="flex p-2 underline w-full"
               href="mailto:yates.alex@gmail.com"
             >
-              <!-- <PhEnvelope /> -->
               E-mail
             </a>
           </li>
@@ -64,13 +61,9 @@
 </template>
 
 <script>
-// import { PhEnvelope } from 'phosphor-vue'
 import { createLink } from '@/helpers'
 
 export default {
-  // components: {
-  //   PhEnvelope,
-  // },
   computed: {
     links() {
       return Object.freeze([

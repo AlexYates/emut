@@ -1,7 +1,7 @@
 <template>
   <main id="products" class="container flex flex-col flex-grow mx-auto">
-    <PageHeading>Products</PageHeading>
-    <ProductList
+    <LazyPageHeading>Products</LazyPageHeading>
+    <LazyProductList
       v-if="productsFiltered && productsFiltered.length > 0"
       :products="productsFiltered.slice(0, 16)"
     />

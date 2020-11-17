@@ -1,6 +1,6 @@
 <template>
   <main id="index" class="container flex flex-col flex-grow mx-auto">
-    <PageHeading>Welcome</PageHeading>
+    <LazyPageHeading>Welcome</LazyPageHeading>
     <div class="p-4">
       <h2 class="mt-16 text-center">
         Note that for demonstration purposes

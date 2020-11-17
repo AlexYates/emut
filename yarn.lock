@@ -7916,10 +7916,10 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-phosphor-vue@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/phosphor-vue/-/phosphor-vue-1.0.0.tgz#7e7c19b6454d828e8221890785b2f3aba878ef6b"
-  integrity sha512-SZC8O30xPSAtmBGxQRX6Yj78KRJrVVWJU10cHjb7RWEKAcHpevofw1E/zH84M1CinV4cUBABkcYty44PSrLgRw==
+phosphor-icons@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/phosphor-icons/-/phosphor-icons-1.0.1.tgz#0e416b7b26e3d0edc0e8a64ad3b038e3b51b92a1"
+  integrity sha512-3HJTmiNqDY+UlGymy/6baAp7f1CIwlCfgRJeK+0nwXYgXOjEClO7squX33mjJMGXhCbsbJ1aiEhhZjqJEAa2Sw==
 
 picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1:
   version "2.2.2"

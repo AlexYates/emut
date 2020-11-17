@@ -4,7 +4,7 @@
     to="/checkout"
   >
     <PhCreditCard />
-    <Spacer />
+    <LazySpacer />
     Checkout
   </RouterLink>
 </template>

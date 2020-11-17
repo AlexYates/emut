@@ -19,7 +19,7 @@
           type="text"
           @keypress.enter="deactivate()"
         />
-        <Spacer />
+        <LazySpacer />
         <button
           class="bg-gray-800 flex items-center justify-center px-4 py-2 rounded-lg shadow-lg text-white"
           @click.prevent="deactivate()"

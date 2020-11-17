@@ -4,7 +4,7 @@
     @click.prevent="toggle(product)"
   >
     <PhShoppingCart :weight="weight" />
-    <Spacer />
+    <LazySpacer />
     Toggle in cart
   </button>
 </template>

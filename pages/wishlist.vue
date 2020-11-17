@@ -1,14 +1,17 @@
 <template>
   <main id="wishlist" class="container flex flex-col flex-grow mx-auto">
-    <PageHeading>
+    <LazyPageHeading>
       Wishlist
-      <Pip v-if="wishlistCount > 0" title="Number of products in wishlist">
+      <LazyPip v-if="wishlistCount > 0" title="Number of products in wishlist">
         {{ wishlistCount }}
-      </Pip>
-    </PageHeading>
-    <ProductList v-if="products && products.length > 0" :products="products" />
-    <EmptyMessage v-else :line="'Your wishlist is empty,'" />
-    <ProductSuggestionSection :products="productsSuggested" />
+      </LazyPip>
+    </LazyPageHeading>
+    <LazyProductList
+      v-if="products && products.length > 0"
+      :products="products"
+    />
+    <LazyEmptyMessage v-else :line="'Your wishlist is empty,'" />
+    <LazyProductSuggestionSection :products="productsSuggested" />
   </main>
 </template>
 

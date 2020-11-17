@@ -49,7 +49,7 @@
         </div>
       </div>
     </label>
-    <Expander />
+    <LazyExpander />
     <button
       class="bg-gray-900 border flex items-center justfy-center px-4 py-2 rounded-lg shadow-lg text-lg text-white"
       :class="{

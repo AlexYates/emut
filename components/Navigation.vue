@@ -7,7 +7,7 @@
       class="bg-gray-100 border flex items-center mb-2 p-2 rounded-lg"
     >
       <component :is="link.component" />
-      <Spacer />
+      <LazySpacer />
       {{ link.title }}
     </RouterLink>
   </nav>

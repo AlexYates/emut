@@ -1,19 +1,19 @@
 <template>
   <main id="cart" class="container flex flex-col flex-grow mx-auto">
-    <PageHeading>
+    <LazyPageHeading>
       Cart
-      <Pip v-if="cartCount > 0" title="Number of products in cart">
+      <LazyPip v-if="cartCount > 0" title="Number of products in cart">
         {{ cartCount }}
-      </Pip>
-    </PageHeading>
+      </LazyPip>
+    </LazyPageHeading>
     <div
       v-if="products && products.length > 0"
       class="flex flex-col-reverse md:flex-row flex-grow"
     >
       <div class="flex flex-col md:w-3/4">
-        <ProductList :products="products" />
+        <LazyProductList :products="products" />
       </div>
-      <Spacer />
+      <LazySpacer />
       <div
         class="flex p-2 w-full md:w-1/4"
         :class="{ 'items-start': products && products.length < 8 }"
@@ -46,20 +46,20 @@
               </div>
             </div>
           </div>
-          <Spacer />
-          <CheckoutLinkLarge />
+          <LazySpacer />
+          <LazyCheckoutLinkLarge />
           <template v-if="products && products.length >= 8">
-            <Spacer />
-            <Expander />
+            <LazySpacer />
+            <LazyExpander />
             <div class="hidden md:flex">
-              <CheckoutLinkLarge class="w-full" />
+              <LazyCheckoutLinkLarge class="w-full" />
             </div>
           </template>
         </div>
       </div>
     </div>
-    <EmptyMessage v-else :line="'Your cart is empty,'" />
-    <ProductSuggestionSection :products="productsSuggested" />
+    <LazyEmptyMessage v-else :line="'Your cart is empty,'" />
+    <LazyProductSuggestionSection :products="productsSuggested" />
   </main>
 </template>
 

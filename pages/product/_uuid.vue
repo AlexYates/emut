@@ -1,6 +1,6 @@
 <template>
   <main id="product" class="container flex flex-col flex-grow mx-auto">
-    <PageHeading>Product</PageHeading>
+    <LazyPageHeading>Product</LazyPageHeading>
     <transition-group
       v-if="product"
       appear
@@ -9,10 +9,10 @@
       tag="ol"
     >
       <li :key="product.uuid" class="p-2">
-        <ProductDetail :product="product" />
+        <LazyProductDetail :product="product" />
       </li>
     </transition-group>
-    <EmptyMessage v-else :line="`That product doesn't exist,`" />
+    <LazyEmptyMessage v-else :line="`That product doesn't exist,`" />
   </main>
 </template>
 

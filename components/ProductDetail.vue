@@ -3,8 +3,8 @@
     class="bg-gray-100 border flex flex-col md:flex-row overflow-hidden rounded-lg shadow-lg"
   >
     <div class="relative w-full md:w-1/2">
-      <PictureImages :images="product.images" />
-      <WishlistToggleButton
+      <LazyPictureImages :images="product.images" />
+      <LazyWishlistToggleButton
         class="absolute m-2 right-0 top-0"
         :product="product"
       />
@@ -15,7 +15,7 @@
         <p>{{ price }}</p>
       </div>
       <div class="flex justify-end w-full">
-        <CartToggleButtonLarge class="mb-4" :product="product" />
+        <LazyCartToggleButtonLarge class="mb-4" :product="product" />
       </div>
       <ol class="flex flex-wrap items-end" title="List of ingredients">
         <li
@@ -23,7 +23,7 @@
           :key="ingredient.uuid"
           class="mb-2"
         >
-          <IngredientItem :ingredient="ingredient" />
+          <LazyIngredientItem :ingredient="ingredient" />
         </li>
       </ol>
       <div class="flex flex-col">
@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import { currencyFormat } from '@/helpers'
+
 export default {
   props: {
     product: {
@@ -49,15 +51,7 @@ export default {
   },
   computed: {
     price() {
-      return this.formatCurrency(this.product.price)
-    },
-  },
-  methods: {
-    formatCurrency(value) {
-      return Intl.NumberFormat('en-GB', {
-        currency: 'EUR',
-        style: 'currency',
-      }).format(value)
+      return currencyFormat(this.product.price)
     },
   },
 }
