@@ -1,4 +1,4 @@
 // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-modern
-const modern = true // TODO: Switch to true when on Prod.
+const modern = process.env.NODE_ENV === 'development' ? false : true
 
 export default modern

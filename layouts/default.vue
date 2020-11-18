@@ -1,14 +1,10 @@
 <template>
   <div id="app" class="bg-white flex flex-col min-h-screen text-indigo-800">
-    <transition appear mode="out-in" name="slide-from-top">
-      <LazyHeading />
-    </transition>
+    <LazyHeading />
     <transition appear mode="out-in" name="pages">
       <Nuxt class="pb-16" />
     </transition>
-    <transition appear mode="out-in" name="slide-from-bottom">
-      <LazyFooting />
-    </transition>
+    <LazyFooting />
     <transition appear mode="out-in" name="fade-fast">
       <LazyOverlay
         v-if="overlayActive"
