@@ -9,15 +9,16 @@
       />
     </RouterLink>
     <LazySpacer />
-    <div class="flex items-center justify-start w-3/5">
-      <h2>{{ product.title }}</h2>
-    </div>
-    <div class="flex items-center justify-end w-2/5">
+    <div
+      class="flex flex-col md:flex-row items-start md:items-center md:justify-between w-full"
+    >
+      <h2 class="font-semibold">{{ product.title }}</h2>
       <LazySpacer />
       <p>{{ currencyFormat(product.price) }}</p>
-      <LazySpacer />
+    </div>
+    <LazySpacer />
+    <div class="flex items-center justify-end">
       <LazyWishlistToggleButton :product="product" />
-      <LazySpacer />
       <LazyCartToggleButton :product="product" />
     </div>
   </figure>

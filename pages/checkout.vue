@@ -6,8 +6,11 @@
         {{ cartCount }}
       </LazyPip>
     </LazyPageHeading>
-    <div v-if="products && products.length > 0" class="flex">
-      <div class="p-2 w-1/2">
+    <div
+      v-if="products && products.length > 0"
+      class="flex flex-col md:flex-row"
+    >
+      <div class="p-2 w-full md:w-1/2">
         <form
           class="bg-gray-100 border flex flex-col items-start p-2 rounded-lg shadow-lg"
           @submit.prevent="submit"
@@ -143,7 +146,7 @@
         </form>
       </div>
       <Spacer />
-      <div class="w-1/2">
+      <div class="w-full md:w-1/2">
         <transition-group
           appear
           mode="out-in"
