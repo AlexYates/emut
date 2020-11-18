@@ -111,3 +111,11 @@
   opacity: 0;
   transform: translateY(-100%);
 }
+
+/* Reduced Motion */
+/* @media (prefers-reduced-motion: reduce) { */
+* {
+  animation: none !important;
+  transition: none !important;
+}
+/* } */
