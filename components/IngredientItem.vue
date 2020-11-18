@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'IngredientItem',
   props: {
     ingredient: {
       required: true,

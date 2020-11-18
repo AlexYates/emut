@@ -18,7 +18,7 @@ const createIngredients = () => ({
 })
 
 const createProduct = () => ({
-  description: new Array(2).fill(null).map(() => lorem.generateParagraphs(1)),
+  description: new Array(2).fill(null).map(() => lorem.generateSentences(1)),
   images: createImage(),
   ingredients: new Array(9).fill(null).map(() => createIngredients()),
   price: Number(50 + Math.random() * 950).toFixed(2),

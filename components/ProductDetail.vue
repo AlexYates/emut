@@ -9,15 +9,16 @@
         :product="product"
       />
     </div>
-    <figcaption class="flex flex-col items-start p-2 w-full md:w-1/2">
-      <div class="flex items-start justify-between mb-2 p-2 w-full">
+    <figcaption class="flex flex-col items-start p-4 w-full md:w-1/2">
+      <div class="flex items-start justify-between mb-2 p-4 w-full">
         <h2 class="font-semibold text-xl">{{ product.title }}</h2>
         <p>{{ price }}</p>
       </div>
       <div class="flex justify-end w-full">
         <LazyCartToggleButtonLarge class="mb-4" :product="product" />
       </div>
-      <ol class="flex flex-wrap items-end" title="List of ingredients">
+      <Expander />
+      <ol class="flex flex-wrap items-end mb-2" title="List of ingredients">
         <li
           v-for="ingredient in product.ingredients"
           :key="ingredient.uuid"
@@ -43,6 +44,7 @@
 import { currencyFormat } from '@/helpers'
 
 export default {
+  name: 'ProductDetail',
   props: {
     product: {
       required: true,

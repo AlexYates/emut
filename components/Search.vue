@@ -21,9 +21,15 @@
         />
         <LazySpacer />
         <button
-          class="bg-gray-800 flex items-center justify-center px-4 py-2 rounded-lg shadow-lg text-white"
+          class="bg-indigo-700 flex items-center justify-center px-4 py-2 rounded-lg shadow-lg text-white"
           @click.prevent="deactivate()"
         >
+          <div
+            class="h-6 w-6"
+            style="fill: currentColor"
+            v-html="PhMagnifyingGlass"
+          />
+          <LazySpacer />
           Search
         </button>
       </div>
@@ -33,8 +39,10 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import PhMagnifyingGlass from '../phosphor-icons/assets/duotone/magnifying-glass-duotone.svg?raw'
 
 export default {
+  name: 'Search',
   computed: {
     ...mapGetters('search', {
       searchGet: 'search',
@@ -46,6 +54,9 @@ export default {
       set(value) {
         this.searchSet(value)
       },
+    },
+    PhMagnifyingGlass() {
+      return PhMagnifyingGlass
     },
   },
   methods: {

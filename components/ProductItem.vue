@@ -21,6 +21,7 @@
 import { currencyFormat } from '@/helpers'
 
 export default {
+  name: 'ProductItem',
   props: {
     product: {
       required: true,

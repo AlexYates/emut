@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-white flex flex-col min-h-screen text-gray-900">
+  <div id="app" class="bg-white flex flex-col min-h-screen text-indigo-800">
     <transition appear mode="out-in" name="slide-from-top">
       <LazyHeading />
     </transition>

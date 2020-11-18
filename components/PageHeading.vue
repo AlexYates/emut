@@ -7,3 +7,9 @@
     </transition>
   </header>
 </template>
+
+<script>
+export default {
+  name: 'PageHeading',
+}
+</script>

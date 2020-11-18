@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-800 text-white z-10">
+  <footer class="bg-indigo-700 text-white z-10">
     <div class="container flex mx-auto px-2 py-8">
       <div class="flex w-1/2">
         <ol class="flex flex-col w-1/3">
@@ -64,6 +64,7 @@
 import { createLink } from '@/helpers'
 
 export default {
+  name: 'Footing',
   computed: {
     links() {
       return Object.freeze([

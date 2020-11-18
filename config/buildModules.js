@@ -6,6 +6,8 @@ const buildModules = [
   '@nuxtjs/tailwindcss',
   // https://github.com/aceforth/nuxt-netlify#usage
   '@aceforth/nuxt-netlify',
+  // https://github.com/nuxt-community/svg-module
+  '@nuxtjs/svg',
 ]
 
 export default buildModules

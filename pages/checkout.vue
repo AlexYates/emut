@@ -131,7 +131,7 @@
             </label>
           </div>
           <button
-            class="bg-gray-900 border flex items-center justfy-center px-4 py-2 rounded-lg shadow-lg text-lg text-white"
+            class="bg-indigo-700 border flex items-center justfy-center px-4 py-2 rounded-lg shadow-lg text-lg text-white"
             :class="{
               'cursor-not-allowed opacity-25 pointer-events-none': isInvalid,
             }"
@@ -241,6 +241,7 @@ export default {
         const expiry = this.expiryField
         const name = this.nameField
         const number = this.numberField
+        /* eslint-disable-next-line */
         console.log(`this.purchase({
           ${cvc},
           ${expiry},

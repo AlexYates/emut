@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: 'EmptyMessage',
   props: {
     line: {
       required: true,

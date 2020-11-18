@@ -1,35 +1,39 @@
 <template>
-  <header class="bg-white shadow-lg sticky top-0 z-10">
+  <header class="bg-gray-100 shadow-lg sticky top-0 z-10">
     <div class="container flex items-center justify-between mx-auto p-4">
       <div class="flex items-center justify-start w-1/3">
         <button
-          class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 rounded-full shadow-lg"
+          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="Show navigation menu"
           @click="
             overlayActivate()
             navigationActivate()
           "
         >
-          <ImageSVG :src="PhList" />
+          <div class="h-6 w-6" style="fill: currentColor" v-html="PhList" />
         </button>
         <LazySpacer />
         <RouterLink
-          class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 rounded-full shadow-lg"
+          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="View all our products"
           to="/products"
         >
-          <ImageSVG :src="PhGift" />
+          <div class="h-6 w-6" style="fill: currentColor" v-html="PhGift" />
         </RouterLink>
         <LazySpacer />
         <button
-          class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 rounded-full shadow-lg"
+          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="Search all our products"
           @click="
             overlayActivate()
             searchActivate()
           "
         >
-          <ImageSVG :src="PhMagnifyingGlass" />
+          <div
+            class="h-6 w-6"
+            style="fill: currentColor"
+            v-html="PhMagnifyingGlass"
+          />
         </button>
       </div>
       <div class="flex items-center justify-center w-1/3">
@@ -37,11 +41,11 @@
       </div>
       <div class="flex items-center justify-end w-1/3">
         <RouterLink
-          class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 relative rounded-full shadow-lg"
+          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and update products in your wishlist"
           to="/wishlist"
         >
-          <ImageSVG :src="PhHeart" />
+          <div class="h-6 w-6" style="fill: currentColor" v-html="PhHeart" />
           <LazyPip
             v-if="wishlistCount > 0"
             class="absolute -m-2 right-0 top-0"
@@ -52,11 +56,15 @@
         </RouterLink>
         <LazySpacer />
         <RouterLink
-          class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 relative rounded-full shadow-lg"
+          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and update products in your cart"
           to="/cart"
         >
-          <ImageSVG :src="PhShoppingCart" />
+          <div
+            class="h-6 w-6"
+            style="fill: currentColor"
+            v-html="PhShoppingCart"
+          />
           <LazyPip
             v-if="cartCount > 0"
             class="absolute -m-2 right-0 top-0"
@@ -67,11 +75,11 @@
         </RouterLink>
         <LazySpacer />
         <RouterLink
-          class="bg-gray-100 focus:bg-white border flex items-center justify-center p-2 rounded-full shadow-lg"
+          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and edit your account details"
           to="/account"
         >
-          <ImageSVG :src="PhUser" />
+          <div class="h-6 w-6" style="fill: currentColor" v-html="PhUser" />
         </RouterLink>
       </div>
     </div>
@@ -80,15 +88,15 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-
-const PhGift = require('../phosphor-icons/assets/duotone/gift-duotone.svg')
-const PhHeart = require('../phosphor-icons/assets/duotone/heart-duotone.svg')
-const PhList = require('../phosphor-icons/assets/duotone/list-duotone.svg')
-const PhMagnifyingGlass = require('../phosphor-icons/assets/duotone/magnifying-glass-duotone.svg')
-const PhShoppingCart = require('../phosphor-icons/assets/duotone/shopping-cart-duotone.svg')
-const PhUser = require('../phosphor-icons/assets/duotone/user-duotone.svg')
+import PhGift from '../phosphor-icons/assets/duotone/gift-duotone.svg?raw'
+import PhHeart from '../phosphor-icons/assets/duotone/heart-duotone.svg?raw'
+import PhList from '../phosphor-icons/assets/duotone/list-duotone.svg?raw'
+import PhMagnifyingGlass from '../phosphor-icons/assets/duotone/magnifying-glass-duotone.svg?raw'
+import PhShoppingCart from '../phosphor-icons/assets/duotone/shopping-cart-duotone.svg?raw'
+import PhUser from '../phosphor-icons/assets/duotone/user-duotone.svg?raw'
 
 export default {
+  name: 'Heading',
   computed: {
     ...mapGetters('wishlist', {
       wishlistAll: 'all',
@@ -96,6 +104,12 @@ export default {
     ...mapGetters('cart', {
       cartAll: 'all',
     }),
+    wishlistCount() {
+      return this.wishlistAll ? this.wishlistAll.length : 0
+    },
+    cartCount() {
+      return this.cartAll ? this.cartAll.length : 0
+    },
     PhGift() {
       return PhGift
     },
@@ -113,12 +127,6 @@ export default {
     },
     PhUser() {
       return PhUser
-    },
-    wishlistCount() {
-      return this.wishlistAll ? this.wishlistAll.length : 0
-    },
-    cartCount() {
-      return this.cartAll ? this.cartAll.length : 0
     },
   },
   methods: {

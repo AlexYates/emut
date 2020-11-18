@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: 'ProductSuggestionSection',
   props: {
     products: {
       required: true,

@@ -1,9 +1,15 @@
 <template>
   <button
-    class="bg-gray-900 border flex items-center justify-center p-2 rounded-lg shadow-lg text-lg text-white"
+    class="border flex items-center justify-center p-2 rounded-lg shadow-lg text-lg"
+    :class="styling.classes"
     @click.prevent="toggle(product)"
   >
-    <ImageSVG :src="PhShoppingCart" />
+    <div
+      class="h-6 w-6"
+      style="fill: currentColor"
+      :style="`${styling.styles}`"
+      v-html="PhShoppingCart"
+    />
     <LazySpacer />
     Toggle in cart
   </button>
@@ -11,10 +17,10 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-
-const PhShoppingCart = require('../phosphor-icons/assets/duotone/shopping-cart-duotone.svg')
+import PhShoppingCart from '../phosphor-icons/assets/duotone/shopping-cart-duotone.svg?raw'
 
 export default {
+  name: 'CartToggleButtonLarge',
   props: {
     product: {
       required: true,
@@ -28,8 +34,16 @@ export default {
     PhShoppingCart() {
       return PhShoppingCart
     },
-    weight() {
-      return this.exists(this.product.uuid) ? 'fill' : 'duotone'
+    styling() {
+      return this.exists(this.product.uuid)
+        ? {
+            classes: 'bg-indigo-700 text-white',
+            styles: 'fill: white;',
+          }
+        : {
+            classes: 'bg-gray-100',
+            styles: '',
+          }
     },
   },
   methods: {

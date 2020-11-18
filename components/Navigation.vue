@@ -6,7 +6,7 @@
       :to="link.path"
       class="bg-gray-100 border flex items-center mb-2 p-2 rounded-lg"
     >
-      <ImageSVG :src="link.icon" />
+      <component :is="link.icon" height="24" width="24" />
       <LazySpacer />
       {{ link.title }}
     </RouterLink>
@@ -15,16 +15,34 @@
 
 <script>
 import { createLink } from '@/helpers'
-
-const PhHouseSimple = require('../phosphor-icons/assets/duotone/house-simple-duotone.svg')
-const PhGift = require('../phosphor-icons/assets/duotone/gift-duotone.svg')
-const PhHeart = require('../phosphor-icons/assets/duotone/heart-duotone.svg')
-const PhMagnifyingGlass = require('../phosphor-icons/assets/duotone/magnifying-glass-duotone.svg')
-const PhShoppingCart = require('../phosphor-icons/assets/duotone/shopping-cart-duotone.svg')
-const PhUser = require('../phosphor-icons/assets/duotone/user-duotone.svg')
+import PhHouseSimple from '../phosphor-icons/assets/duotone/house-simple-duotone.svg?raw'
+import PhGift from '../phosphor-icons/assets/duotone/gift-duotone.svg?raw'
+import PhHeart from '../phosphor-icons/assets/duotone/heart-duotone.svg?raw'
+import PhMagnifyingGlass from '../phosphor-icons/assets/duotone/magnifying-glass-duotone.svg?raw'
+import PhShoppingCart from '../phosphor-icons/assets/duotone/shopping-cart-duotone.svg?raw'
+import PhUser from '../phosphor-icons/assets/duotone/user-duotone.svg?raw'
 
 export default {
+  name: 'Navigation',
   computed: {
+    PhHouseSimple() {
+      return PhHouseSimple
+    },
+    PhGift() {
+      return PhGift
+    },
+    PhHeart() {
+      return PhHeart
+    },
+    PhMagnifyingGlass() {
+      return PhMagnifyingGlass
+    },
+    PhShoppingCart() {
+      return PhShoppingCart
+    },
+    PhUser() {
+      return PhUser
+    },
     links() {
       return Object.freeze([
         createLink('Home', '/', PhHouseSimple),
