@@ -50,6 +50,7 @@
             <a
               class="flex p-2 underline w-full"
               href="https://github.com/AlexYates/emut"
+              rel="noopener noreferrer"
               target="_blank"
               >GitHub</a
             >
