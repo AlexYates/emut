@@ -1,10 +1,10 @@
 <template>
   <footer class="bg-indigo-700 text-white z-10">
     <div class="container flex mx-auto px-2 py-8">
-      <div class="flex w-1/2">
-        <ol class="flex flex-col w-1/3">
+      <div class="flex w-1/2 md:w-1/4">
+        <ol class="flex flex-col w-1/2">
           <li
-            v-for="link in links.slice(0, 2)"
+            v-for="link in links.slice(0, 3)"
             :key="link.uuid"
             class="flex w-full"
           >
@@ -13,20 +13,9 @@
             </RouterLink>
           </li>
         </ol>
-        <ol class="flex flex-col w-1/3">
+        <ol class="flex flex-col w-1/2">
           <li
-            v-for="link in links.slice(2, 4)"
-            :key="link.uuid"
-            class="flex w-full"
-          >
-            <RouterLink class="flex p-2 underline w-full" :to="link.path">
-              {{ link.title }}
-            </RouterLink>
-          </li>
-        </ol>
-        <ol class="flex flex-col w-1/3">
-          <li
-            v-for="link in links.slice(4)"
+            v-for="link in links.slice(3)"
             :key="link.uuid"
             class="flex w-full"
           >
@@ -36,7 +25,7 @@
           </li>
         </ol>
       </div>
-      <div class="flex items-end justify-end w-1/2">
+      <div class="flex items-end justify-end w-1/2 md:w-3/4">
         <ol class="flex flex-col">
           <li class="flex w-full">
             <a

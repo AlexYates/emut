@@ -3,8 +3,8 @@
     class="bg-gray-100 border flex flex-col md:flex-row overflow-hidden rounded-lg shadow-lg"
   >
     <div class="relative w-full md:w-1/2">
-      <LazyPictureImages :images="product.images" />
-      <LazyWishlistToggleButton
+      <PictureImages :images="product.images" />
+      <WishlistToggleButton
         class="absolute m-2 right-0 top-0"
         :product="product"
       />
@@ -15,7 +15,7 @@
         <p>{{ price }}</p>
       </div>
       <div class="flex justify-end w-full">
-        <LazyCartToggleButtonLarge class="mb-4" :product="product" />
+        <CartToggleButtonLarge class="mb-4" :product="product" />
       </div>
       <Expander />
       <ol class="flex flex-wrap items-end mb-2" title="List of ingredients">
@@ -24,7 +24,7 @@
           :key="ingredient.uuid"
           class="mb-2"
         >
-          <LazyIngredientItem :ingredient="ingredient" />
+          <IngredientItem :ingredient="ingredient" />
         </li>
       </ol>
       <div class="flex flex-col">

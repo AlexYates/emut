@@ -3,7 +3,7 @@
     <div class="container flex items-center justify-between mx-auto p-4">
       <div class="flex items-center justify-start w-1/3">
         <button
-          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="Show navigation menu"
           @click="
             overlayActivate()
@@ -12,17 +12,17 @@
         >
           <div class="h-6 w-6" style="fill: currentColor" v-html="PhList" />
         </button>
-        <LazySpacer />
+        <Spacer class="md:flex hidden" />
         <RouterLink
-          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border md:flex hidden items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="View all our products"
           to="/products"
         >
           <div class="h-6 w-6" style="fill: currentColor" v-html="PhGift" />
         </RouterLink>
-        <LazySpacer />
+        <Spacer class="md:flex hidden" />
         <button
-          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border md:flex hidden items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="Search all our products"
           @click="
             overlayActivate()
@@ -41,22 +41,22 @@
       </div>
       <div class="flex items-center justify-end w-1/3">
         <RouterLink
-          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border md:flex hidden items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and update products in your wishlist"
           to="/wishlist"
         >
           <div class="h-6 w-6" style="fill: currentColor" v-html="PhHeart" />
-          <LazyPip
+          <Pip
             v-if="wishlistCount > 0"
             class="absolute -m-2 right-0 top-0"
             title="Number of products in wishlist"
           >
             {{ wishlistCount }}
-          </LazyPip>
+          </Pip>
         </RouterLink>
-        <LazySpacer />
+        <Spacer class="md:flex hidden" />
         <RouterLink
-          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and update products in your cart"
           to="/cart"
         >
@@ -65,17 +65,17 @@
             style="fill: currentColor"
             v-html="PhShoppingCart"
           />
-          <LazyPip
+          <Pip
             v-if="cartCount > 0"
             class="absolute -m-2 right-0 top-0"
             title="Number of products in cart"
           >
             {{ cartCount }}
-          </LazyPip>
+          </Pip>
         </RouterLink>
-        <LazySpacer />
+        <Spacer class="md:flex hidden" />
         <RouterLink
-          class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border md:flex hidden items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and edit your account details"
           to="/account"
         >

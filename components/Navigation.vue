@@ -4,10 +4,10 @@
       v-for="link in links"
       :key="link.uuid"
       :to="link.path"
-      class="bg-gray-100 focus:bg-indigo-700 hover:bg-indigo-700 border flex items-center mb-2 p-2 rounded-lg focus:text-white hover:text-white"
+      class="bg-gray-100 focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center mb-2 p-2 rounded-lg focus:text-white hover:text-white"
     >
       <div class="h-6 w-6" style="fill: currentColor" v-html="link.svg" />
-      <LazySpacer />
+      <Spacer />
       {{ link.title }}
     </RouterLink>
   </nav>

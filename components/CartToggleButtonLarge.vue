@@ -1,8 +1,10 @@
 <template>
-  <button
-    class="border flex items-center justify-center p-2 rounded-lg shadow-lg text-lg"
+  <label
+    class="border cursor-pointer flex items-center justify-center p-2 rounded-lg shadow-lg text-lg"
     :class="styling.classes"
+    for="toggle"
     @click.prevent="toggle(product)"
+    @keypress.enter="toggle(product)"
   >
     <div
       class="h-6 w-6"
@@ -10,9 +12,16 @@
       :style="`${styling.styles}`"
       v-html="PhShoppingCart"
     />
-    <LazySpacer />
+    <Spacer />
     Toggle in cart
-  </button>
+    <input
+      id="toggle"
+      class="hidden"
+      name="toggle"
+      :selected="exists(product.uuid)"
+      type="checkbox"
+    />
+  </label>
 </template>
 
 <script>
@@ -20,7 +29,7 @@ import { mapActions, mapGetters } from 'vuex'
 import PhShoppingCart from '../phosphor-icons/assets/duotone/shopping-cart-duotone.svg?raw'
 
 export default {
-  name: 'CartToggleButtonLarge',
+  name: 'CartToggleButton',
   props: {
     product: {
       required: true,
@@ -41,7 +50,7 @@ export default {
             styles: 'fill: white;',
           }
         : {
-            classes: 'bg-gray-100',
+            classes: 'bg-white',
             styles: '',
           }
     },

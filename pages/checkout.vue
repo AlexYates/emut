@@ -1,16 +1,24 @@
 <template>
   <main id="checkout" class="container flex flex-col flex-grow mx-auto">
-    <LazyPageHeading>
+    <PageHeading>
       Checkout
-      <LazyPip v-if="cartCount > 0" title="Number of products in checkout">
+      <Pip v-if="cartCount > 0" title="Number of products in checkout">
         {{ cartCount }}
-      </LazyPip>
-    </LazyPageHeading>
+      </Pip>
+    </PageHeading>
     <div
       v-if="products && products.length > 0"
       class="flex flex-col md:flex-row"
     >
-      <div class="p-2 w-full md:w-1/2">
+      <div class="flex flex-col p-2 w-full md:w-1/2">
+        <div
+          class="bg-gray-100 border flex flex-col items-start p-2 rounded-lg shadow-lg"
+        >
+          <h2 class="font-semibold mb-4 text-lg">Checkout total</h2>
+          <CheckoutTotalSection />
+        </div>
+        <Spacer />
+        <Spacer />
         <form
           class="bg-gray-100 border flex flex-col items-start p-2 rounded-lg shadow-lg"
           @submit.prevent="submit"
@@ -134,18 +142,23 @@
             </label>
           </div>
           <button
-            class="bg-indigo-700 border flex items-center justfy-center px-4 py-2 rounded-lg shadow-lg text-lg text-white"
+            class="bg-indigo-700 border flex items-center justify-center px-4 py-2 rounded-lg shadow-lg text-lg text-white w-full"
             :class="{
               'cursor-not-allowed opacity-25 pointer-events-none': isInvalid,
             }"
             :disabled="isInvalid"
             type="submit"
           >
-            Submit
+            <div
+              class="h-6 w-6"
+              style="fill: currentColor"
+              v-html="PhCreditCard"
+            />
+            <Spacer />
+            Purchase
           </button>
         </form>
       </div>
-      <Spacer />
       <div class="w-full md:w-1/2">
         <transition-group
           appear
@@ -159,8 +172,8 @@
         </transition-group>
       </div>
     </div>
-    <LazyEmptyMessage v-else :line="'Your checkout is empty,'" />
-    <LazyProductSuggestionSection :products="productsSuggested" />
+    <EmptyMessage v-else :line="'Your checkout is empty,'" />
+    <ProductSuggestionSection />
   </main>
 </template>
 
@@ -173,6 +186,7 @@ import {
   numeric,
   required,
 } from 'vuelidate/lib/validators'
+import PhCreditCard from '../phosphor-icons/assets/duotone/credit-card-duotone.svg?raw'
 
 export default {
   mixins: [validationMixin],
@@ -214,8 +228,8 @@ export default {
         this.$v.numberField.$invalid
       )
     },
-    productsSuggested() {
-      return this.productsAll.slice(16, 20)
+    PhCreditCard() {
+      return PhCreditCard
     },
   },
   methods: {

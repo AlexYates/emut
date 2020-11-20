@@ -4,10 +4,15 @@
 
 /* Remove TailwindCSSs outline. */
 * {
-  /* outline: none !important; */
+  outline: none !important;
 }
 
 html {
   /* Prevent unwanted horizontal layout shift. */
   @apply overflow-x-hidden overflow-y-scroll;
+}
+
+/* Button - Round & Large */
+.bg-white.nuxt-link-exact-active {
+  @apply bg-indigo-700 text-white;
 }

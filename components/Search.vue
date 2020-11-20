@@ -19,7 +19,7 @@
           type="text"
           @keypress.enter="deactivate()"
         />
-        <LazySpacer />
+        <Spacer />
         <button
           class="bg-indigo-700 flex items-center justify-center px-4 py-2 rounded-lg shadow-lg text-white"
           @click.prevent="deactivate()"
@@ -29,7 +29,7 @@
             style="fill: currentColor"
             v-html="PhMagnifyingGlass"
           />
-          <LazySpacer />
+          <Spacer />
           Search
         </button>
       </div>

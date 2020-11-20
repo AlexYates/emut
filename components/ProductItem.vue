@@ -3,12 +3,9 @@
     class="bg-gray-100 border flex flex-col flex-grow min-h-full overflow-hidden rounded-lg shadow-lg"
   >
     <RouterLink class="relative" :to="`/product/${product.uuid}`">
-      <LazyPictureImages :images="product.images" />
-      <LazyWishlistToggleButton
-        class="absolute left-0 top-0"
-        :product="product"
-      />
-      <LazyCartToggleButton class="absolute right-0 top-0" :product="product" />
+      <PictureImages :images="product.images" />
+      <WishlistToggleButton class="absolute left-0 top-0" :product="product" />
+      <CartToggleButton class="absolute right-0 top-0" :product="product" />
     </RouterLink>
     <figcaption class="flex flex-col flex-grow justify-between p-2">
       <h2 class="font-semibold mb-2 text-lg">{{ product.title }}</h2>

@@ -4,7 +4,7 @@
     to="/checkout"
   >
     <div class="h-6 w-6" style="fill: currentColor" v-html="PhCreditCard" />
-    <LazySpacer />
+    <Spacer />
     Checkout
   </RouterLink>
 </template>

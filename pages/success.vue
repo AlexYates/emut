@@ -1,8 +1,8 @@
 <template>
   <main id="index" class="container flex flex-col flex-grow mx-auto">
-    <LazyPageHeading>Success</LazyPageHeading>
-    <LazyEmptyMessage :line="`Fantastic! Your order has been successfull,`" />
-    <LazyProductSuggestionSection :products="productsSuggested" />
+    <PageHeading>Success</PageHeading>
+    <EmptyMessage :line="`Fantastic! Your order has been successfull,`" />
+    <ProductSuggestionSection />
   </main>
 </template>
 

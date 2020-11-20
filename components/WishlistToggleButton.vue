@@ -1,9 +1,11 @@
 <template>
-  <button
-    class="bg-gray-100 border flex items-center justify-center m-2 p-2 rounded-full shadow-lg"
+  <label
+    class="border cursor-pointer flex items-center justify-center m-2 p-2 rounded-full shadow-lg"
     :class="styling.classes"
+    for="toggle"
     title="Toggle in wishlist"
     @click.prevent="toggle(product)"
+    @keypress.enter="toggle(product)"
   >
     <div
       class="h-6 w-6"
@@ -11,7 +13,14 @@
       :style="`${styling.styles}`"
       v-html="PhHeart"
     />
-  </button>
+    <input
+      id="toggle"
+      class="hidden"
+      name="toggle"
+      :selected="exists(product.uuid)"
+      type="checkbox"
+    />
+  </label>
 </template>
 
 <script>
@@ -37,7 +46,7 @@ export default {
             styles: 'fill: white;',
           }
         : {
-            classes: 'bg-gray-100',
+            classes: 'bg-white',
             styles: '',
           }
     },

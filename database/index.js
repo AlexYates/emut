@@ -5,10 +5,10 @@ const lorem = new LoremIpsum()
 
 const createImage = () => ({
   description: lorem.generateWords(5),
-  height: 100,
+  height: 400,
   small: '1x1.png',
-  large: '500x500.png',
-  width: 100,
+  large: '1x1.png',
+  width: 400,
 })
 
 const createIngredients = () => ({

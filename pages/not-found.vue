@@ -1,8 +1,8 @@
 <template>
   <main id="notfound" class="container flex flex-col flex-grow mx-auto">
-    <LazyPageHeading>Not found</LazyPageHeading>
-    <LazyEmptyMessage :line="`The page you visited doesn't exist,`" />
-    <LazyProductSuggestionSection :products="productsSuggested" />
+    <PageHeading>Not found</PageHeading>
+    <EmptyMessage :line="`The page you visited doesn't exist,`" />
+    <ProductSuggestionSection />
   </main>
 </template>
 

@@ -1,25 +1,25 @@
 <template>
   <figure
-    class="bg-white border flex items-center justify-between p-2 rounded-lg shadow-lg"
+    class="bg-gray-100 border flex items-center justify-between p-2 rounded-lg shadow-lg"
   >
     <RouterLink :to="`/product/${product.uuid}`">
-      <LazyPictureImages
+      <PictureImages
         :classes="'bg-gray-100 h-auto overflow-hidden rounded-lg w-20'"
         :images="product.images"
       />
     </RouterLink>
-    <LazySpacer />
+    <Spacer />
     <div
       class="flex flex-col md:flex-row items-start md:items-center md:justify-between w-full"
     >
       <h2 class="font-semibold">{{ product.title }}</h2>
-      <LazySpacer />
+      <Spacer />
       <p>{{ currencyFormat(product.price) }}</p>
     </div>
-    <LazySpacer />
+    <Spacer />
     <div class="flex items-center justify-end">
-      <LazyWishlistToggleButton :product="product" />
-      <LazyCartToggleButton :product="product" />
+      <WishlistToggleButton :product="product" />
+      <CartToggleButton :product="product" />
     </div>
   </figure>
 </template>
