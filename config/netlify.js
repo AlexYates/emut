@@ -18,7 +18,7 @@ const netlify = {
         `base-uri 'self'`,
         `connect-src 'self'`,
         `form-action 'self'`,
-        `img-src 'self' data:image/png`,
+        `img-src 'self' data:`,
         `manifest-src 'self'`,
         // https://web.dev/trusted-types/
         // `require-trusted-types-for 'script'`,
