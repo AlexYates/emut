@@ -36,7 +36,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
     "lorem-ipsum": "^2.0.3",
-    "prettier": "^2.1.1",
+    "prettier": "^2.2.0",
     "uuid": "^8.3.1",
     "vue-jest": "^3.0.4"
   }
