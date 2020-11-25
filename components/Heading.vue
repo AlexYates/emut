@@ -1,6 +1,6 @@
 <template>
   <header class="bg-gray-100 shadow-lg sticky top-0 z-10">
-    <div class="container flex items-center justify-between mx-auto p-4">
+    <div class="container flex items-center justify-between mx-auto p-2 md:p-4">
       <div class="flex items-center justify-start w-1/3">
         <button
           class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
@@ -12,17 +12,17 @@
         >
           <div class="h-6 w-6" style="fill: currentColor" v-html="PhList" />
         </button>
-        <Spacer class="md:flex hidden" />
+        <Spacer class="flex" />
         <RouterLink
-          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border md:flex hidden items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="View all our products"
           to="/products"
         >
           <div class="h-6 w-6" style="fill: currentColor" v-html="PhGift" />
         </RouterLink>
-        <Spacer class="md:flex hidden" />
+        <Spacer class="flex" />
         <button
-          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border md:flex hidden items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="Search all our products"
           @click="
             overlayActivate()
@@ -41,7 +41,7 @@
       </div>
       <div class="flex items-center justify-end w-1/3">
         <RouterLink
-          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border md:flex hidden items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and update products in your wishlist"
           to="/wishlist"
         >
@@ -54,7 +54,7 @@
             {{ wishlistCount }}
           </Pip>
         </RouterLink>
-        <Spacer class="md:flex hidden" />
+        <Spacer class="flex" />
         <RouterLink
           class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 relative rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and update products in your cart"
@@ -73,9 +73,9 @@
             {{ cartCount }}
           </Pip>
         </RouterLink>
-        <Spacer class="md:flex hidden" />
+        <Spacer class="flex" />
         <RouterLink
-          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border md:flex hidden items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
+          class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
           title="View and edit your account details"
           to="/account"
         >

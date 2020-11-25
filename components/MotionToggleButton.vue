@@ -8,7 +8,7 @@
       type="checkbox"
     />
     <span class="flex mb-2 text-sm">
-      Toggle motion &amp; animations across the whole website.
+      Toggle animations on or off, across the whole site.
     </span>
     <button
       class="focus:bg-indigo-400 hover:bg-indigo-400 border cursor-pointer inline-flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"

@@ -1,6 +1,6 @@
 <template>
   <figure
-    class="bg-gray-100 border flex items-center justify-between p-2 rounded-lg shadow-lg"
+    class="bg-gray-100 border flex items-center justify-between p-2 pr-0 rounded-lg shadow-lg"
   >
     <RouterLink :to="`/product/${product.uuid}`">
       <PictureImages

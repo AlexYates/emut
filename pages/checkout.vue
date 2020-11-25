@@ -28,26 +28,24 @@
             <span class="flex mb-1 text-sm">Name on card</span>
             <input
               id="name"
-              v-model="nameField"
+              v-model="name"
               autofocus
               class="bg-white border flex items-center justify-center p-2 rounded-lg w-full"
               placeholder="Name on card"
               name="name"
               required
               type="text"
-              @input="setName($event.target.value)"
+              @input="nameInput($event.target.value)"
             />
-            <div v-if="this.$v.nameField.$dirty" class="text-red-500 text-sm">
-              <div v-if="!$v.nameField.required" class="mb-1">
-                Name is required
-              </div>
+            <div v-if="this.$v.name.$dirty" class="text-red-500 text-sm">
+              <div v-if="!$v.name.required" class="mb-1">Name is required</div>
             </div>
           </label>
           <label class="flex flex-col mb-4 w-full" for="email">
             <span class="flex mb-1 text-sm">Card number</span>
             <input
               id="number"
-              v-model="numberField"
+              v-model="number"
               autofocus
               class="bg-white border flex items-center justify-center p-2 rounded-lg w-full"
               inputmode="numeric"
@@ -55,20 +53,20 @@
               name="number"
               required
               type="text"
-              @input="setNumber($event.target.value)"
+              @input="numberInput($event.target.value)"
             />
-            <div v-if="this.$v.numberField.$dirty" class="text-red-500 text-sm">
+            <div v-if="this.$v.number.$dirty" class="text-red-500 text-sm">
               <div
-                v-if="!$v.numberField.maxLength || !$v.numberField.minLength"
+                v-if="!$v.number.maxLength || !$v.number.minLength"
                 class="mb-1"
               >
                 Card number must be
-                {{ $v.numberField.$params.maxLength.max }} digits
+                {{ $v.number.$params.maxLength.max }} digits
               </div>
-              <div v-if="!$v.numberField.numeric" class="mb-1">
+              <div v-if="!$v.number.numeric" class="mb-1">
                 Card number can only be numbers
               </div>
-              <div v-if="!$v.numberField.required" class="mb-1">
+              <div v-if="!$v.number.required" class="mb-1">
                 Card number is required
               </div>
             </div>
@@ -78,7 +76,7 @@
               <span class="flex mb-1 text-sm">Card expiry</span>
               <input
                 id="expiry"
-                v-model="expiryField"
+                v-model="expiry"
                 autofocus
                 class="bg-white border flex items-center justify-center p-2 rounded-lg w-full"
                 inputmode="numeric"
@@ -86,23 +84,20 @@
                 name="number"
                 required
                 type="text"
-                @input="setExpiry($event.target.value)"
+                @input="expiryInput($event.target.value)"
               />
-              <div
-                v-if="this.$v.expiryField.$dirty"
-                class="text-red-500 text-sm"
-              >
+              <div v-if="this.$v.expiry.$dirty" class="text-red-500 text-sm">
                 <div
-                  v-if="!$v.expiryField.maxLength || !$v.expiryField.minLength"
+                  v-if="!$v.expiry.maxLength || !$v.expiry.minLength"
                   class="mb-1"
                 >
                   Expiry must be
-                  {{ $v.expiryField.$params.maxLength.max }} digits
+                  {{ $v.expiry.$params.maxLength.max }} digits
                 </div>
-                <div v-if="!$v.expiryField.numeric" class="mb-1">
+                <div v-if="!$v.expiry.numeric" class="mb-1">
                   Expiry can only be numbers
                 </div>
-                <div v-if="!$v.expiryField.required" class="mb-1">
+                <div v-if="!$v.expiry.required" class="mb-1">
                   Expiry is required
                 </div>
               </div>
@@ -112,7 +107,7 @@
               <span class="flex mb-1 text-sm">CVC</span>
               <input
                 id="cvc"
-                v-model="cvcField"
+                v-model="cvc"
                 autofocus
                 class="bg-white border flex items-center justify-center p-2 rounded-lg w-full"
                 inputmode="numeric"
@@ -120,24 +115,19 @@
                 name="number"
                 required
                 type="text"
-                @input="setCVC($event.target.value)"
+                @input="cvcInput($event.target.value)"
               />
-              <div v-if="this.$v.cvcField.$dirty" class="text-red-500 text-sm">
-                <div v-if="!$v.cvcField.required" class="mb-1">
+              <div v-if="this.$v.cvc.$dirty" class="text-red-500 text-sm">
+                <div v-if="!$v.cvc.required" class="mb-1">
                   Expiry is required
                 </div>
-                <div
-                  v-if="!$v.cvcField.maxLength || !$v.cvcField.minLength"
-                  class="mb-1"
-                >
-                  CVC must be {{ $v.cvcField.$params.maxLength.max }} digits
+                <div v-if="!$v.cvc.maxLength || !$v.cvc.minLength" class="mb-1">
+                  CVC must be {{ $v.cvc.$params.maxLength.max }} digits
                 </div>
-                <div v-if="!$v.cvcField.numeric" class="mb-1">
+                <div v-if="!$v.cvc.numeric" class="mb-1">
                   CVC can only be numbers
                 </div>
-                <div v-if="!$v.cvcField.required" class="mb-1">
-                  CVC is required
-                </div>
+                <div v-if="!$v.cvc.required" class="mb-1">CVC is required</div>
               </div>
             </label>
           </div>
@@ -190,20 +180,15 @@ import PhCreditCard from '../phosphor-icons/assets/duotone/credit-card-duotone.s
 
 export default {
   mixins: [validationMixin],
-  data() {
-    return {
-      cvcField: '',
-      expiryField: '',
-      nameField: '',
-      numberField: '',
-    }
-  },
   computed: {
     ...mapGetters('cart', {
       products: 'all',
     }),
-    ...mapGetters('products', {
-      productsAll: 'all',
+    ...mapGetters('payment', {
+      cvcGet: 'cvc',
+      expiryGet: 'expiry',
+      nameGet: 'name',
+      numberGet: 'number',
     }),
     cartCount() {
       return this.products ? this.products.length : 0
@@ -222,71 +207,103 @@ export default {
     },
     isInvalid() {
       return (
-        this.$v.cvcField.$invalid ||
-        this.$v.expiryField.$invalid ||
-        this.$v.nameField.$invalid ||
-        this.$v.numberField.$invalid
+        this.$v.cvc.$invalid ||
+        this.$v.expiry.$invalid ||
+        this.$v.name.$invalid ||
+        this.$v.number.$invalid
       )
     },
     PhCreditCard() {
       return PhCreditCard
+    },
+    cvc: {
+      get() {
+        return this.cvcGet
+      },
+      set(value) {
+        this.cvcSet(value)
+      },
+    },
+    expiry: {
+      get() {
+        return this.expiryGet
+      },
+      set(value) {
+        this.expirySet(value)
+      },
+    },
+    name: {
+      get() {
+        return this.nameGet
+      },
+      set(value) {
+        this.nameSet(value)
+      },
+    },
+    number: {
+      get() {
+        return this.numberGet
+      },
+      set(value) {
+        this.numberSet(value)
+      },
     },
   },
   methods: {
     ...mapActions('cart', {
       reset: 'reset',
     }),
-    setCVC(value) {
-      this.cvcField = value
-      this.$v.cvcField.$touch()
+    ...mapActions('payment', {
+      cvcSet: 'cvc',
+      expirySet: 'expiry',
+      nameSet: 'name',
+      numberSet: 'number',
+    }),
+    cvcInput(value) {
+      this.cvcSet(value)
+      this.$v.cvc.$touch()
     },
-    setName(value) {
-      this.nameField = value
-      this.$v.nameField.$touch()
+    expiryInput(value) {
+      this.expirySet(value)
+      this.$v.expiry.$touch()
     },
-    setNumber(value) {
-      this.numberField = value
-      this.$v.numberField.$touch()
+    nameInput(value) {
+      this.nameSet(value)
+      this.$v.name.$touch()
     },
-    setExpiry(value) {
-      this.expiryField = value
-      this.$v.expiryField.$touch()
+    numberInput(value) {
+      this.numberSet(value)
+      this.$v.number.$touch()
     },
     submit(event) {
       if (!this.isInvalid) {
-        const cvc = this.cvcField
-        const expiry = this.expiryField
-        const name = this.nameField
-        const number = this.numberField
-        /* eslint-disable-next-line */
-        console.log(`this.purchase({
-          ${cvc},
-          ${expiry},
-          ${name},
-          ${number},
-        })`)
-        this.$router.push('/success')
-        this.reset()
+        setTimeout(() => {
+          this.expirySet(this.expiry)
+          this.nameSet(this.name)
+          this.numberSet(this.number)
+          this.$router.push('/success')
+          this.reset()
+        }, 125)
       }
     },
   },
   validations: {
-    cvcField: {
+    cvc: {
       maxLength: maxLength(3),
       minLength: minLength(3),
       numeric,
       required,
     },
-    expiryField: {
+    expiry: {
       maxLength: maxLength(8),
       minLength: minLength(8),
       numeric,
       required,
     },
-    nameField: {
+    name: {
       required,
     },
-    numberField: {
+    number: {
       maxLength: maxLength(16),
       minLength: minLength(16),
       numeric,

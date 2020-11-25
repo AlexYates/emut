@@ -8,7 +8,7 @@
         browsing our products
       </RouterLink>
       <br />
-      for inspiration!
+      for more inspiration!
     </h2>
   </div>
 </template>
