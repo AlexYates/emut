@@ -1,18 +1,14 @@
 <template>
   <label for="motion">
-    <input
-      id="motion"
-      class="hidden"
-      name="motion"
-      :selected="motionActive"
-      type="checkbox"
-    />
     <span class="flex mb-2 text-sm">
       Toggle animations on or off, across the whole site.
     </span>
-    <button
-      class="focus:bg-indigo-400 hover:bg-indigo-400 border cursor-pointer inline-flex items-center justify-center p-2 rounded-full shadow-lg focus:text-white hover:text-white"
+    <div
+      :aria-checked="motionActive"
+      class="focus:bg-indigo-400 hover:bg-indigo-400 border cursor-pointer inline-flex items-center justify-center p-2 pr-4 rounded-full shadow-lg focus:text-white hover:text-white"
       :class="classes"
+      role="checkbox"
+      tabindex="0"
       @click.prevent="motionToggle"
       @keypress.enter="motionToggle"
     >
@@ -21,7 +17,9 @@
         style="fill: currentColor"
         v-html="motionActive ? PhCheck : PhX"
       />
-    </button>
+      <Spacer />
+      {{ motionActive ? 'Motion enabled' : 'Motion disabled' }}
+    </div>
   </label>
 </template>
 
