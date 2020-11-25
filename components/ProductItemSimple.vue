@@ -1,6 +1,6 @@
 <template>
   <figure
-    class="bg-white border flex items-center justify-between p-2 rounded-lg shadow-lg"
+    class="bg-gray-100 border flex items-center justify-between p-2 pr-0 rounded-lg shadow-lg"
   >
     <RouterLink :to="`/product/${product.uuid}`">
       <PictureImages
@@ -9,15 +9,16 @@
       />
     </RouterLink>
     <Spacer />
-    <div class="flex items-center justify-start w-3/5">
-      <h2>{{ product.title }}</h2>
-    </div>
-    <div class="flex items-center justify-end w-2/5">
+    <div
+      class="flex flex-col md:flex-row items-start md:items-center md:justify-between w-full"
+    >
+      <h2 class="font-semibold">{{ product.title }}</h2>
       <Spacer />
       <p>{{ currencyFormat(product.price) }}</p>
-      <Spacer />
+    </div>
+    <Spacer />
+    <div class="flex items-center justify-end">
       <WishlistToggleButton :product="product" />
-      <Spacer />
       <CartToggleButton :product="product" />
     </div>
   </figure>
@@ -27,6 +28,7 @@
 import { currencyFormat } from '@/helpers'
 
 export default {
+  name: 'ProductItemSimple',
   props: {
     product: {
       required: true,

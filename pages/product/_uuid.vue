@@ -20,9 +20,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  components: {
-    ProductDetail: () => import('@/components/ProductDetail.vue'),
-  },
   asyncData({ params: { uuid } }) {
     return {
       uuid,

@@ -15,12 +15,10 @@
 </template>
 
 <script>
+import { currencyFormat } from '@/helpers'
+
 export default {
-  components: {
-    CartToggleButton: () => import('@/components/CartToggleButton.vue'),
-    PictureImages: () => import('@/components/PictureImages.vue'),
-    WishlistToggleButton: () => import('@/components/WishlistToggleButton.vue'),
-  },
+  name: 'ProductItem',
   props: {
     product: {
       required: true,
@@ -29,15 +27,7 @@ export default {
   },
   computed: {
     price() {
-      return this.formatCurrency(this.product.price)
-    },
-  },
-  methods: {
-    formatCurrency(value) {
-      return Intl.NumberFormat('en-GB', {
-        currency: 'EUR',
-        style: 'currency',
-      }).format(value)
+      return currencyFormat(this.product.price)
     },
   },
 }

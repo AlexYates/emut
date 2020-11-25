@@ -88,3 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Phosphor Icons Git sub-module
+phosphor-icons/

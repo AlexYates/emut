@@ -1,23 +1,35 @@
 <template>
-  <button
-    class="bg-gray-800 border flex items-center justify-center p-2 rounded-lg shadow-lg text-lg text-white"
+  <label
+    class="border cursor-pointer flex items-center justify-center p-2 rounded-lg shadow-lg text-lg"
+    :class="styling.classes"
+    for="toggle"
     @click.prevent="toggle(product)"
+    @keypress.enter="toggle(product)"
   >
-    <PhShoppingCart :weight="weight" />
+    <div
+      class="h-6 w-6"
+      style="fill: currentColor"
+      :style="`${styling.styles}`"
+      v-html="PhShoppingCart"
+    />
     <Spacer />
     Toggle in cart
-  </button>
+    <input
+      id="toggle"
+      class="hidden"
+      name="toggle"
+      :selected="exists(product.uuid)"
+      type="checkbox"
+    />
+  </label>
 </template>
 
 <script>
-import { PhShoppingCart } from 'phosphor-vue'
 import { mapActions, mapGetters } from 'vuex'
+import PhShoppingCart from '../phosphor-icons/assets/duotone/shopping-cart-duotone.svg?raw'
 
 export default {
-  components: {
-    PhShoppingCart,
-    Spacer: () => import('@/components/Spacer.vue'),
-  },
+  name: 'CartToggleButton',
   props: {
     product: {
       required: true,
@@ -28,8 +40,19 @@ export default {
     ...mapGetters('cart', {
       exists: 'exists',
     }),
-    weight() {
-      return this.exists(this.product.uuid) ? 'fill' : 'duotone'
+    PhShoppingCart() {
+      return PhShoppingCart
+    },
+    styling() {
+      return this.exists(this.product.uuid)
+        ? {
+            classes: 'bg-indigo-700 text-white',
+            styles: 'fill: white;',
+          }
+        : {
+            classes: 'bg-white',
+            styles: '',
+          }
     },
   },
   methods: {

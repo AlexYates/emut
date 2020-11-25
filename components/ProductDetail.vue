@@ -9,15 +9,16 @@
         :product="product"
       />
     </div>
-    <figcaption class="flex flex-col items-start p-2 w-full md:w-1/2">
-      <div class="flex items-start justify-between mb-2 p-2 w-full">
+    <figcaption class="flex flex-col items-start p-4 w-full md:w-1/2">
+      <div class="flex items-start justify-between mb-2 p-4 w-full">
         <h2 class="font-semibold text-xl">{{ product.title }}</h2>
         <p>{{ price }}</p>
       </div>
       <div class="flex justify-end w-full">
         <CartToggleButtonLarge class="mb-4" :product="product" />
       </div>
-      <ol class="flex flex-wrap items-end" title="List of ingredients">
+      <Expander />
+      <ol class="flex flex-wrap items-end mb-2" title="List of ingredients">
         <li
           v-for="ingredient in product.ingredients"
           :key="ingredient.uuid"
@@ -40,14 +41,10 @@
 </template>
 
 <script>
+import { currencyFormat } from '@/helpers'
+
 export default {
-  components: {
-    CartToggleButtonLarge: () =>
-      import('@/components/CartToggleButtonLarge.vue'),
-    IngredientItem: () => import('@/components/IngredientItem.vue'),
-    PictureImages: () => import('@/components/PictureImages.vue'),
-    WishlistToggleButton: () => import('@/components/WishlistToggleButton.vue'),
-  },
+  name: 'ProductDetail',
   props: {
     product: {
       required: true,
@@ -56,15 +53,7 @@ export default {
   },
   computed: {
     price() {
-      return this.formatCurrency(this.product.price)
-    },
-  },
-  methods: {
-    formatCurrency(value) {
-      return Intl.NumberFormat('en-GB', {
-        currency: 'EUR',
-        style: 'currency',
-      }).format(value)
+      return currencyFormat(this.product.price)
     },
   },
 }

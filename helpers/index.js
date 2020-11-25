@@ -5,9 +5,9 @@ const account = {
   currency: 'GBP',
 }
 
-const createLink = (title, path, component) => ({
-  component,
+const createLink = (title, path, svg) => ({
   path,
+  svg,
   title,
   uuid: uuidv4(),
 })

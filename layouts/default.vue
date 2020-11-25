@@ -1,5 +1,9 @@
 <template>
-  <div id="app" class="bg-white flex flex-col min-h-screen text-gray-900">
+  <div
+    id="app"
+    class="bg-white flex flex-col min-h-screen text-indigo-800"
+    :class="{ 'motion-active': motionActive }"
+  >
     <transition appear mode="out-in" name="slide-from-top">
       <Heading />
     </transition>
@@ -41,14 +45,10 @@
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  components: {
-    Footing: () => import('@/components/Footing.vue'),
-    Heading: () => import('@/components/Heading.vue'),
-    Navigation: () => import('@/components/Navigation.vue'),
-    Overlay: () => import('@/components/Overlay.vue'),
-    Search: () => import('@/components/Search.vue'),
-  },
   computed: {
+    ...mapGetters('account', {
+      motionActive: 'motionActive',
+    }),
     ...mapGetters('navigation', {
       navigationActive: 'active',
     }),

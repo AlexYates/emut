@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: 'Productist',
   props: {
     products: {
       required: true,

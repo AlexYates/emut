@@ -5,10 +5,10 @@ const lorem = new LoremIpsum()
 
 const createImage = () => ({
   description: lorem.generateWords(5),
-  height: 100,
-  small: 'https://placehold.it/1x1',
-  large: 'https://placehold.it/2x2',
-  width: 100,
+  height: 400,
+  small: '1x1.png',
+  large: '1x1.png',
+  width: 400,
 })
 
 const createIngredients = () => ({
@@ -18,7 +18,7 @@ const createIngredients = () => ({
 })
 
 const createProduct = () => ({
-  description: new Array(2).fill(null).map(() => lorem.generateParagraphs(1)),
+  description: new Array(2).fill(null).map(() => lorem.generateSentences(1)),
   images: createImage(),
   ingredients: new Array(9).fill(null).map(() => createIngredients()),
   price: Number(50 + Math.random() * 950).toFixed(2),

@@ -8,6 +8,7 @@
     </PageHeading>
     <ProductList v-if="products && products.length > 0" :products="products" />
     <EmptyMessage v-else :line="'Your wishlist is empty,'" />
+    <ProductSuggestionSection />
   </main>
 </template>
 
@@ -18,6 +19,9 @@ export default {
   computed: {
     ...mapGetters('wishlist', {
       products: 'all',
+    }),
+    ...mapGetters('products', {
+      productsAll: 'all',
     }),
     wishlistCount() {
       return this.products ? this.products.length : 0

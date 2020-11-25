@@ -10,22 +10,21 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:js:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "test": "jest"
+    "test": "jest",
+    "build:no-source": "nuxt build && del .nuxt/dist/**/*.js.map"
   },
   "dependencies": {
-    "@braid/vue-formulate": "^2.4.5",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/svg": "^0.1.12",
     "core-js": "^3.6.5",
-    "lorem-ipsum": "^2.0.3",
     "nuxt": "^2.14.5",
-    "phosphor-vue": "^1.0.0",
-    "uuid": "^8.3.1"
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@aceforth/nuxt-netlify": "^1.1.0",
     "@nuxtjs/eslint-config": "^5.0.0",
-    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/eslint-module": "^3.0.1",
     "@nuxtjs/tailwindcss": "^3.0.2",
     "@vue/test-utils": "^1.1.0",
     "babel-core": "7.0.0-bridge.0",
@@ -33,10 +32,12 @@
     "babel-jest": "^26.3.0",
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
+    "lorem-ipsum": "^2.0.3",
     "prettier": "^2.1.1",
+    "uuid": "^8.3.1",
     "vue-jest": "^3.0.4"
   }
 }

@@ -11,3 +11,24 @@ html {
   /* Prevent unwanted horizontal layout shift. */
   @apply overflow-x-hidden overflow-y-scroll;
 }
+
+/* Button - Round & Large */
+.bg-white.nuxt-link-active {
+  @apply bg-indigo-700 text-white;
+}
+
+.button {
+  @apply bg-white  border flex items-center justify-center p-2 rounded-lg;
+}
+.button:focus,
+.button:hover {
+  @apply bg-indigo-400 text-white;
+}
+
+.button-round {
+  @apply bg-white border flex items-center justify-center rounded-full;
+}
+.button-round:focus,
+.button-round:hover {
+  @apply bg-indigo-400 text-white;
+}

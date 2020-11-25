@@ -1,3 +1,7 @@
+const {
+  colors: { black, gray, indigo, white }, // We only use the colours, the rest can be removed.
+} = require('tailwindcss/defaultTheme')
+
 module.exports = {
   future: {
     defaultLineHeights: true,
@@ -6,16 +10,20 @@ module.exports = {
     standardFontWeights: true,
   },
   theme: {
-    opacity: {
-      0:    '0',
-      12.5: '0.125',
-      25:   '0.25',
-      37.5: '0.375',
-      50:   '0.5',
-      62.5: '0.625',
-      75:   '0.75',
-      87.5: '0.875',
-      100:  '100',
+    colors: {
+      black,
+      gray,
+      indigo,
+      white,
+    },
+  },
+  variants: {
+    extend: {
+      ringColor: ['focus'], // The ring-color utilities like ring-green-700
+      ringOffsetColor: ['focus'], // The ring-offset-color utilities like ring-offset-green-700
+      ringOffsetWidth: ['focus'], // The ring-offset-width utilities like ring-offset-2
+      ringOpacity: ['focus'], // The ring-opacity utilities like ring-opacity-50
+      ringWidth: ['focus'], // The ring-width utilities like ring-2
     },
   },
 }

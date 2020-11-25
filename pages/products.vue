@@ -1,6 +1,9 @@
 <template>
   <main id="products" class="container flex flex-col flex-grow mx-auto">
-    <PageHeading>Products</PageHeading>
+    <PageHeading>
+      Products
+      <sup v-if="$route.query.title">({{ $route.query.title }})</sup>
+    </PageHeading>
     <ProductList
       v-if="productsFiltered && productsFiltered.length > 0"
       :products="productsFiltered.slice(0, 16)"
