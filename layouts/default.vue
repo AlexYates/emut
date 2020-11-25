@@ -114,6 +114,16 @@
         opacity: 0;
         transform: translateY(-100%);
       }
+
+      /* Pop */
+      .pop-enter-active,
+      .pop-leave-active {
+        transition: transform 0.25s cubic-bezier(0.65, 0.55, 0.65, 1.55);
+      }
+      .pop-enter,
+      .pop-leave-to {
+        transform: scale(0.125);
+      }
     </style>
     <transition appear mode="out-in" name="slide-from-top">
       <Heading />
