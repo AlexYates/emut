@@ -5,6 +5,7 @@
       :key="link.uuid"
       :to="link.path"
       class="bg-white focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center mb-2 p-2 rounded-lg focus:text-white hover:text-white"
+      exact
     >
       <div class="h-6 w-6" style="fill: currentColor" v-html="link.svg" />
       <Spacer />
