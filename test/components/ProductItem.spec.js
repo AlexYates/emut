@@ -38,3 +38,20 @@ describe('ProductItem - html', () => {
     expect(actual).toBe(expectations)
   })
 })
+
+describe('ProductItem - price', () => {
+  it('it renders price as a formatted currency', () => {
+    // const shallowWrapper = mount(ProductItem, {
+    //   stubs: {
+    //     RouterLink: true,
+    //     PictureImages: true,
+    //     WishlistToggleButton: true,
+    //     CartToggleButton: true,
+    //   },
+    //   propsData: {
+    //     product: product,
+    //   },
+    // })
+    expect(ProductItem.computed.price.call({ product })).toBe('£123.45')
+  })
+})
