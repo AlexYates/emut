@@ -6,8 +6,8 @@ describe('Spacer - html', () => {
   it('html matches expectations', () => {
     const expectations = '<div class="m-1"></div>'
 
-    const shallowWrapper = shallowMount(Spacer)
-    const actual = shallowWrapper.html()
+    const wrapper = shallowMount(Spacer)
+    const actual = wrapper.html()
 
     expect(actual).toBe(expectations)
   })

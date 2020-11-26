@@ -22,7 +22,7 @@ describe('ProductItem - html', () => {
   </figcaption>
 </figure>`
 
-    const shallowWrapper = mount(ProductItem, {
+    const wrapper = mount(ProductItem, {
       stubs: {
         RouterLink: true,
         PictureImages: true,
@@ -33,7 +33,7 @@ describe('ProductItem - html', () => {
         product: product,
       },
     })
-    const actual = shallowWrapper.html()
+    const actual = wrapper.html()
 
     expect(actual).toBe(expectations)
   })
@@ -41,17 +41,6 @@ describe('ProductItem - html', () => {
 
 describe('ProductItem - price', () => {
   it('it renders price as a formatted currency', () => {
-    // const shallowWrapper = mount(ProductItem, {
-    //   stubs: {
-    //     RouterLink: true,
-    //     PictureImages: true,
-    //     WishlistToggleButton: true,
-    //     CartToggleButton: true,
-    //   },
-    //   propsData: {
-    //     product: product,
-    //   },
-    // })
-    expect(ProductItem.computed.price.call({ product })).toBe('£123.45')
+    expect(ProductItem.computed.price.call({ product })).toBe(`£${product.price}`)
   })
 })
