@@ -9,11 +9,11 @@
       <Spacer />
       <RegisterForm class="md:w-1/2" />
     </div>
-    <div v-else class="flex flex-col p-2 w-full md:w-1/2">
+    <section v-else class="flex flex-col md:flex-row p-2">
       <div
-        class="bg-gray-100 border flex flex-col p-2 rounded-lg shadow-lg w-full"
+        class="bg-gray-100 border flex flex-col p-2 rounded-lg shadow-lg w-full md:w-1/3"
       >
-        <h2 class="font-semibold mb-2 text-lg">Account details</h2>
+        <h2 class="font-semibold mb-2 text-lg">Details</h2>
         <label class="mb-4" for="email">
           <div class="flex mb-2 text-sm">E-mail</div>
           <input
@@ -41,9 +41,22 @@
             :value="account.uuid"
           />
         </label>
+      </div>
+      <Spacer />
+      <div
+        class="bg-gray-100 border flex flex-col p-2 rounded-lg shadow-lg w-full md:w-1/3"
+      >
+        <h2 class="font-semibold mb-2 text-lg">Interface</h2>
         <MotionToggleButton />
       </div>
-    </div>
+      <Spacer />
+      <div
+        class="bg-gray-100 border flex flex-col p-2 rounded-lg shadow-lg w-full md:w-1/3"
+      >
+        <h2 class="font-semibold mb-2 text-lg">Status</h2>
+        <SignOutButton />
+      </div>
+    </section>
   </main>
 </template>
 

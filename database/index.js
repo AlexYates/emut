@@ -17,11 +17,15 @@ const createIngredients = () => ({
   uuid: uuidv4(),
 })
 
+const createSale = () =>
+  Math.random() > 0.75 ? Number(Math.floor(Math.random() * 0.5)).toFixed(1) : 0
+
 const createProduct = () => ({
   description: new Array(2).fill(null).map(() => lorem.generateSentences(1)),
   images: createImage(),
   ingredients: new Array(9).fill(null).map(() => createIngredients()),
   price: Number(50 + Math.random() * 950).toFixed(2),
+  sale: createSale(),
   title: lorem.generateWords(3),
   uuid: uuidv4(),
 })

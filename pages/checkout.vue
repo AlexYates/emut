@@ -23,7 +23,15 @@
           class="bg-gray-100 border flex flex-col items-start p-2 rounded-lg shadow-lg"
           @submit.prevent="submit"
         >
-          <h2 class="font-semibold mb-4 text-lg">Payment details</h2>
+          <div class="flex items-center justify-between mb-4 w-full">
+            <h2 class="font-semibold text-lg">Payment details</h2>
+            <Spacer />
+            <div
+              class="h-6 w-6"
+              style="fill: currentColor"
+              v-html="PhLockKey"
+            />
+          </div>
           <label class="flex flex-col mb-4 w-full" for="email">
             <span class="flex mb-1 text-sm">Name on card</span>
             <input
@@ -177,6 +185,7 @@ import {
   required,
 } from 'vuelidate/lib/validators'
 import PhCreditCard from '../phosphor-icons/assets/duotone/credit-card-duotone.svg?raw'
+import PhLockKey from '../phosphor-icons/assets/duotone/lock-key-duotone.svg?raw'
 
 export default {
   mixins: [validationMixin],
@@ -215,6 +224,9 @@ export default {
     },
     PhCreditCard() {
       return PhCreditCard
+    },
+    PhLockKey() {
+      return PhLockKey
     },
     cvc: {
       get() {

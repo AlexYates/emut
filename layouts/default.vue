@@ -10,6 +10,9 @@
     <transition appear mode="out-in" name="pages">
       <Nuxt class="pb-16" />
     </transition>
+    <transition appear mode="out-in" name="fade-fast">
+      <NewsletterBannerSection />
+    </transition>
     <transition appear mode="out-in" name="slide-from-bottom">
       <Footing />
     </transition>
@@ -59,10 +62,6 @@ export default {
       cartActive: 'cartActive',
       searchActive: 'searchActive',
     }),
-  },
-  provide: {
-    size: 24,
-    weight: 'duotone',
   },
   methods: {
     ...mapActions('overlay', {

@@ -20,6 +20,10 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  validate({ params: { uuid } }) {
+    // TODO: Check this uuid exists in the list of products from store.
+    return uuid && uuid.length === 36
+  },
   asyncData({ params: { uuid } }) {
     return {
       uuid,
@@ -32,10 +36,6 @@ export default {
     product() {
       return this.find(this.$route.params.uuid)
     },
-  },
-  validate({ params: { uuid } }) {
-    // TODO: Check this uuid exists in the list of products from store.
-    return uuid && uuid.length === 36
   },
 }
 </script>

@@ -4,15 +4,16 @@
     @submit.prevent="submit"
   >
     <h2 class="font-semibold mb-6 text-lg">Register</h2>
-    <label class="flex flex-col mb-4 w-full" for="email">
+    <label class="flex flex-col mb-4 w-full" for="new-email">
       <span class="flex mb-1 text-sm">E-mail</span>
       <input
-        id="email"
+        id="new-email"
         v-model="emailField"
+        autocomplete="email"
         autofocus="new-email"
         class="bg-white border flex items-center justify-center p-2 rounded-lg w-full"
         placeholder="Accounts e-mail address"
-        name="email"
+        name="new-email"
         required
         type="email"
         @input="setEmail($event.target.value)"
@@ -26,15 +27,15 @@
         </div>
       </div>
     </label>
-    <label class="flex flex-col mb-4 w-full" for="password">
+    <label class="flex flex-col mb-4 w-full" for="new-password">
       <span class="flex mb-1 text-sm">Password</span>
       <input
-        id="password"
+        id="new-password"
         v-model="passwordField"
         autocomplete="new-password"
         class="bg-white border flex p-2 rounded-lg w-full"
         placeholder="Accounts password"
-        name="password"
+        name="new-password"
         required
         type="password"
         @input="setPassword($event.target.value)"

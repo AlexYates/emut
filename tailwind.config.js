@@ -1,5 +1,5 @@
 const {
-  colors: { black, gray, indigo, white }, // We only use the colours, the rest can be removed.
+  colors: { black, gray, indigo, transparent, white }, // We only use the colours, the rest can be removed.
 } = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -14,6 +14,7 @@ module.exports = {
       black,
       gray,
       indigo,
+      transparent,
       white,
     },
   },
