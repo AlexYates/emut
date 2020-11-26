@@ -15,4 +15,5 @@ module.exports = {
     '<rootDir>/pages/**/*.vue',
     '<rootDir>/store/**/*.js',
   ],
+  coverageReporters: ['html'],
 }
