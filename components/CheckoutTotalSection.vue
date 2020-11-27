@@ -19,7 +19,7 @@
     <div class="flex font-semibold items-center mb-1 text-lg w-full">
       <div class="flex w-1/2">Total</div>
       <div class="flex justify-end w-1/2">
-        {{ currencyFormat(total) }}
+        {{ currencyFormat(subTotal + deliveryTotal) }}
       </div>
     </div>
   </div>
@@ -46,9 +46,6 @@ export default {
     },
     deliveryTotal() {
       return 3.99
-    },
-    total() {
-      return this.subTotal + this.deliveryTotal
     },
   },
   methods: {
