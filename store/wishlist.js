@@ -24,6 +24,9 @@ export const mutations = {
   remove: (state, index) => {
     state.products.splice(index, 1)
   },
+  reset: (state) => {
+    state.products = []
+  },
 }
 
 export const actions = {
@@ -32,6 +35,9 @@ export const actions = {
   },
   remove({ commit }, index) {
     commit('remove', index)
+  },
+  reset({ commit }) {
+    commit('reset')
   },
   toggle({ commit, getters }, product) {
     const index = getters.index(product.uuid)
