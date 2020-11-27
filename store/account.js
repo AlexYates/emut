@@ -1,7 +1,8 @@
-import { v4 as uuidv4 } from 'uuid'
+import { signIn, signOut } from '@/database/account'
 
 export const state = () => ({
-  account: null,
+  account: {},
+  hasError: false,
   inProgress: false,
   motionActive: false,
   signedIn: false,
@@ -10,6 +11,12 @@ export const state = () => ({
 export const getters = {
   account: (state) => {
     return state.account
+  },
+  hasError: (state) => {
+    return state.hasError
+  },
+  inProgress: (state) => {
+    return state.inProgress
   },
   motionActive: (state) => {
     return state.motionActive
@@ -20,8 +27,11 @@ export const getters = {
 }
 
 export const mutations = {
-  account(state, { email, password, uuid }) {
-    state.account = { email, password, uuid }
+  account(state, { email, password }) {
+    state.account = { email, password }
+  },
+  hasError(state, bool) {
+    state.hasError = bool
   },
   inProgress(state, bool) {
     state.inProgress = bool
@@ -48,15 +58,35 @@ export const actions = {
       commit('motionActivate')
     }
   },
-  signIn({ commit }, { email, password }) {
+  async signIn({ commit }, { email, password }) {
+    commit('hasError', false)
     commit('inProgress', true)
-    setTimeout(() => {
-      commit('account', { email, password, uuid: uuidv4() })
-      commit('signIn')
-      commit('inProgress', false)
-    }, 125)
+    signIn({ email, password })
+      .then(({ status }) => {
+        if (status === 200) {
+          commit('account', { email, password })
+          commit('signIn')
+          commit('inProgress', false)
+        } else {
+          commit('hasError', true)
+          commit('inProgress', false)
+        }
+      })
+      .catch((error) => console.error('Error', error))
   },
-  signOut({ commit }) {
-    commit('signOut')
+  async signOut({ commit }, { email, password }) {
+    commit('hasError', false)
+    commit('inProgress', true)
+    signOut({ email, password })
+      .then(({ status }) => {
+        if (status === 200) {
+          commit('signOut')
+          commit('inProgress', false)
+        } else {
+          commit('hasError', true)
+          commit('inProgress', false)
+        }
+      })
+      .catch((error) => console.error('Error', error))
   },
 }
