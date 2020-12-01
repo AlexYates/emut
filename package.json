@@ -14,7 +14,7 @@
     "build:no-source": "nuxt build && del .nuxt/dist/**/*.js.map"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/axios": "^5.12.3",
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/svg": "^0.1.12",
     "core-js": "^3.6.5",
