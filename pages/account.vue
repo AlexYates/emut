@@ -46,7 +46,7 @@
       <div
         class="bg-gray-100 border flex flex-col p-2 rounded-lg shadow-lg w-full md:w-1/3"
       >
-        <h2 class="font-semibold mb-2 text-lg">Interface</h2>
+        <h2 class="font-semibold mb-2` text-lg">Interface</h2>
         <MotionToggleButton />
       </div>
       <Spacer />

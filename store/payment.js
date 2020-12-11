@@ -49,3 +49,10 @@ export const actions = {
     commit('number', number)
   },
 }
+
+export const payment = {
+  state,
+  getters,
+  mutations,
+  actions,
+}

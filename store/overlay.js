@@ -32,3 +32,10 @@ export const actions = {
     }
   },
 }
+
+export const overlay = {
+  state,
+  getters,
+  mutations,
+  actions,
+}

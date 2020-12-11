@@ -48,3 +48,10 @@ export const actions = {
     }
   },
 }
+
+export const wishlist = {
+  state,
+  getters,
+  mutations,
+  actions,
+}

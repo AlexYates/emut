@@ -113,3 +113,10 @@ export const actions = {
     }
   },
 }
+
+export const ui = {
+  state,
+  getters,
+  mutations,
+  actions,
+}

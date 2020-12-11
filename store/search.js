@@ -19,3 +19,10 @@ export const actions = {
     commit('search', term)
   },
 }
+
+export const search = {
+  state,
+  getters,
+  mutations,
+  actions,
+}

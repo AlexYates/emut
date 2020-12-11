@@ -30,7 +30,7 @@ describe('ProductItem - html', () => {
         CartToggleButton: true,
       },
       propsData: {
-        product: product,
+        product,
       },
     })
     const actual = wrapper.html()
@@ -41,6 +41,8 @@ describe('ProductItem - html', () => {
 
 describe('ProductItem - price', () => {
   it('it renders price as a formatted currency', () => {
-    expect(ProductItem.computed.price.call({ product })).toBe(`£${product.price}`)
+    expect(ProductItem.computed.price.call({ product })).toBe(
+      `£${product.price}`
+    )
   })
 })

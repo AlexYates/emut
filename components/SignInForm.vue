@@ -39,7 +39,7 @@
         type="password"
         @input="setPassword($event.target.value)"
       />
-      <div v-if="this.$v.passwordField.$dirty" class="text-red-500 text-sm">
+      <div v-if="$v.passwordField.$dirty" class="text-red-500 text-sm">
         <div v-if="!$v.passwordField.required" class="mb-1">
           Password is required
         </div>

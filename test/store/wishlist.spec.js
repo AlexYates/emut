@@ -86,7 +86,7 @@ describe('wishlist - reset', () => {
 
 // Acions
 describe('wishlist - actions - add', () => {
-  it('calls the expected mutation/s for add', async () => {
+  it('calls the expected mutation/s for add', () => {
     const commit = jest.fn()
 
     actions.add({ commit }, productA)
@@ -95,7 +95,7 @@ describe('wishlist - actions - add', () => {
 })
 
 describe('wishlist - actions - remove', () => {
-  it('calls the expected mutation/s for remove', async () => {
+  it('calls the expected mutation/s for remove', () => {
     const commit = jest.fn()
 
     actions.remove({ commit }, 0)
@@ -104,7 +104,7 @@ describe('wishlist - actions - remove', () => {
 })
 
 describe('wishlist - actions - reset', () => {
-  it('calls the expected mutation/s for reset', async () => {
+  it('calls the expected mutation/s for reset', () => {
     const commit = jest.fn()
 
     actions.reset({ commit })

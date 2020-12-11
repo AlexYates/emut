@@ -19,7 +19,7 @@ describe('EmptyMessage - html', () => {
 
     const wrapper = mount(EmptyMessage, {
       propsData: {
-        line: line,
+        line,
       },
       stubs: {
         RouterLink: true,

@@ -10,14 +10,15 @@ describe('CheckoutTotalSection - html', () => {
   it('html matches expectations', () => {
     const localVue = createLocalVue()
     localVue.use(Vuex)
+
     const store = new Vuex.Store({
       modules: {
         cart: {
           namespaced: true,
-          state: state,
-          getters: getters,
-          mutations: mutations,
-          actions: actions,
+          state,
+          getters,
+          mutations,
+          actions,
         },
       },
     })
@@ -61,17 +62,17 @@ describe('CheckoutTotalSection - cartCount', () => {
     const localVue = createLocalVue()
     localVue.use(Vuex)
 
-    const store = new Vuex.Store({
-      modules: {
-        cart: {
-          namespaced: true,
-          state: state,
-          getters: getters,
-          mutations: mutations,
-          actions: actions,
-        },
-      },
-    })
+    // new Vuex.Store({
+    //   modules: {
+    //     cart: {
+    //       namespaced: true,
+    //       state,
+    //       getters,
+    //       mutations,
+    //       actions,
+    //     },
+    //   },
+    // })
 
     const localThis = { products: [productA, productB] }
     expect(CheckoutTotalSection.computed.cartCount.call(localThis)).toBe(2)
@@ -83,17 +84,17 @@ describe('CheckoutTotalSection - subTotal', () => {
     const localVue = createLocalVue()
     localVue.use(Vuex)
 
-    const store = new Vuex.Store({
-      modules: {
-        cart: {
-          namespaced: true,
-          state: state,
-          getters: getters,
-          mutations: mutations,
-          actions: actions,
-        },
-      },
-    })
+    // new Vuex.Store({
+    //   modules: {
+    //     cart: {
+    //       namespaced: true,
+    //       state,
+    //       getters,
+    //       mutations,
+    //       actions,
+    //     },
+    //   },
+    // })
 
     const localThis = { products: [productA, productB] }
     expect(CheckoutTotalSection.computed.subTotal.call(localThis)).toBe(
@@ -107,17 +108,17 @@ describe('CheckoutTotalSection - deliveryTotal', () => {
     const localVue = createLocalVue()
     localVue.use(Vuex)
 
-    const store = new Vuex.Store({
-      modules: {
-        cart: {
-          namespaced: true,
-          state: state,
-          getters: getters,
-          mutations: mutations,
-          actions: actions,
-        },
-      },
-    })
+    // new Vuex.Store   ({
+    //   modules: {
+    //     cart: {
+    //       namespaced: true,
+    //       state,
+    //       getters,
+    //       mutations,
+    //       actions,
+    //     },
+    //   },
+    // })
 
     expect(CheckoutTotalSection.computed.deliveryTotal.call()).toBe(3.99)
   })

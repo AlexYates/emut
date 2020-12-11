@@ -86,7 +86,7 @@ describe('cart - reset', () => {
 
 // Acions
 describe('cart - actions - add', () => {
-  it('calls the expected mutation/s for add', async () => {
+  it('calls the expected mutation/s for add', () => {
     const commit = jest.fn()
 
     actions.add({ commit }, productA)
@@ -95,7 +95,7 @@ describe('cart - actions - add', () => {
 })
 
 describe('cart - actions - remove', () => {
-  it('calls the expected mutation/s for remove', async () => {
+  it('calls the expected mutation/s for remove', () => {
     const commit = jest.fn()
 
     actions.remove({ commit }, 0)
@@ -104,7 +104,7 @@ describe('cart - actions - remove', () => {
 })
 
 describe('cart - actions - reset', () => {
-  it('calls the expected mutation/s for reset', async () => {
+  it('calls the expected mutation/s for reset', () => {
     const commit = jest.fn()
 
     actions.reset({ commit })

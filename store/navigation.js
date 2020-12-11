@@ -32,3 +32,10 @@ export const actions = {
     }
   },
 }
+
+export const navigation = {
+  state,
+  getters,
+  mutations,
+  actions,
+}

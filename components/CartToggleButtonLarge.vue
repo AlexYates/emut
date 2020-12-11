@@ -1,6 +1,6 @@
 <template>
   <label
-    class="border cursor-pointer flex items-center justify-center p-2 rounded-lg shadow-lg text-lg"
+    class="border cursor-pointer flex items-center justify-center p-2 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-yellow-400 rounded-lg shadow-lg text-lg"
     :class="styling.classes"
     for="toggle"
     @click.prevent="toggle(product)"

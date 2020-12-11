@@ -58,7 +58,7 @@ export const actions = {
       commit('motionActivate')
     }
   },
-  async signIn({ commit }, { email, password }) {
+  signIn({ commit }, { email, password }) {
     commit('hasError', false)
     commit('inProgress', true)
     signIn({ email, password })
@@ -72,9 +72,12 @@ export const actions = {
           commit('inProgress', false)
         }
       })
-      .catch((error) => console.error('Error', error))
+      .catch((error) => {
+        /* eslint-disable-next-line */
+        console.error('Error', error)
+      })
   },
-  async signOut({ commit }, { email, password }) {
+  signOut({ commit }, { email, password }) {
     commit('hasError', false)
     commit('inProgress', true)
     signOut({ email, password })
@@ -87,6 +90,16 @@ export const actions = {
           commit('inProgress', false)
         }
       })
-      .catch((error) => console.error('Error', error))
+      .catch((error) => {
+        /* eslint-disable-next-line */
+        console.error('Error', error)
+      })
   },
+}
+
+export const account = {
+  state,
+  getters,
+  mutations,
+  actions,
 }
