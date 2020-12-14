@@ -59,7 +59,7 @@
       :disabled="isInvalid"
       type="submit"
     >
-      Submit
+      Register
     </button>
   </form>
 </template>

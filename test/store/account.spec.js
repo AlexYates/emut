@@ -1,4 +1,4 @@
-import { /* state, */ getters, mutations, actions } from '@/store/account'
+import { getters, mutations, actions } from '@/store/account'
 import { signIn, signOut } from '@/database/account'
 
 const payload = {

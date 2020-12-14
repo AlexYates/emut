@@ -1,5 +1,5 @@
 <template>
-  <transition appear mode="out-in" name="slide-from-bottom">
+  <transition appear mode="out-in" name="slide-from-left">
     <aside
       class="bg-white border p-4 rounded-lg shadow-lg w-1/4"
       :class="{

@@ -58,7 +58,7 @@
       :disabled="isInvalid"
       type="submit"
     >
-      Submit
+      Sign in
     </button>
   </form>
 </template>

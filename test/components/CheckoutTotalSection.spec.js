@@ -1,4 +1,4 @@
-import { createLocalVue, /* mount, */ shallowMount } from '@vue/test-utils'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import CheckoutTotalSection from '@/components/CheckoutTotalSection'
 import Vuex from 'vuex'
 import { state, getters, mutations, actions } from '@/store/cart'
@@ -62,18 +62,6 @@ describe('CheckoutTotalSection - cartCount', () => {
     const localVue = createLocalVue()
     localVue.use(Vuex)
 
-    // new Vuex.Store({
-    //   modules: {
-    //     cart: {
-    //       namespaced: true,
-    //       state,
-    //       getters,
-    //       mutations,
-    //       actions,
-    //     },
-    //   },
-    // })
-
     const localThis = { products: [productA, productB] }
     expect(CheckoutTotalSection.computed.cartCount.call(localThis)).toBe(2)
   })
@@ -83,18 +71,6 @@ describe('CheckoutTotalSection - subTotal', () => {
   it('subTotal matches expectation', () => {
     const localVue = createLocalVue()
     localVue.use(Vuex)
-
-    // new Vuex.Store({
-    //   modules: {
-    //     cart: {
-    //       namespaced: true,
-    //       state,
-    //       getters,
-    //       mutations,
-    //       actions,
-    //     },
-    //   },
-    // })
 
     const localThis = { products: [productA, productB] }
     expect(CheckoutTotalSection.computed.subTotal.call(localThis)).toBe(
@@ -107,18 +83,6 @@ describe('CheckoutTotalSection - deliveryTotal', () => {
   it('deliveryTotal matches expectation', () => {
     const localVue = createLocalVue()
     localVue.use(Vuex)
-
-    // new Vuex.Store   ({
-    //   modules: {
-    //     cart: {
-    //       namespaced: true,
-    //       state,
-    //       getters,
-    //       mutations,
-    //       actions,
-    //     },
-    //   },
-    // })
 
     expect(CheckoutTotalSection.computed.deliveryTotal.call()).toBe(3.99)
   })

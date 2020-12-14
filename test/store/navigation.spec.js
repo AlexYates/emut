@@ -1,7 +1,4 @@
-import {
-  /* state, */ getters,
-  mutations /* , actions */,
-} from '@/store/navigation'
+import { getters, mutations } from '@/store/navigation'
 
 // Getters
 describe('navigation - active', () => {

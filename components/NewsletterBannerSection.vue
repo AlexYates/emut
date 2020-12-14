@@ -1,7 +1,7 @@
 <template>
   <aside class="bg-indigo-900" role="banner">
-    <div class="container flex flex-col md:flex-row justify-center mx-auto p-4">
-      <div class="w-full md:w-1/3">
+    <div class="container flex flex-col md:flex-row items-end justify-center mx-auto p-4">
+      <div class="w-full lg:w-1/3">
         <h2 class="font-semibold mb-2 text-lg text-white">
           Sign up to our Newsletter
         </h2>
@@ -11,7 +11,7 @@
         </p>
       </div>
       <Spacer />
-      <div class="w-full md:w-1/3">
+      <div class="w-full lg:w-1/3">
         <label class="flex flex-col w-full" for="current-email">
           <span class="flex mb-1 text-sm text-white">E-mail</span>
           <div class="relative">

@@ -5,7 +5,7 @@
     <RouterLink :to="`/product/${product.uuid}`">
       <PictureImages
         :classes="'bg-gray-100 h-auto overflow-hidden rounded-lg w-20'"
-        :images="product.images"
+        :images="product.images[0]"
       />
     </RouterLink>
     <Spacer />

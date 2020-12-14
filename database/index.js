@@ -22,7 +22,7 @@ const createSale = () =>
 
 const createProduct = () => ({
   description: new Array(2).fill(null).map(() => lorem.generateSentences(1)),
-  images: createImage(),
+  images: new Array(4).fill(null).map(() => createImage()),
   ingredients: new Array(9).fill(null).map(() => createIngredients()),
   price: Number(50 + Math.random() * 950).toFixed(2),
   sale: createSale(),

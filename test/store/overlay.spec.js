@@ -1,7 +1,4 @@
-import {
-  /* state, */ getters,
-  mutations /* , actions */,
-} from '@/store/overlay'
+import { getters, mutations } from '@/store/overlay'
 
 // Getters
 describe('overlay - active', () => {

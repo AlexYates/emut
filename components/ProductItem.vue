@@ -3,7 +3,7 @@
     class="bg-gray-100 border flex flex-col flex-grow min-h-full overflow-hidden rounded-lg shadow-lg"
   >
     <RouterLink class="relative" :to="`/product/${product.uuid}`">
-      <PictureImages :images="product.images" />
+      <PictureImages :images="product.images[0]" />
       <WishlistToggleButton class="absolute left-0 top-0" :product="product" />
       <CartToggleButton class="absolute right-0 top-0" :product="product" />
     </RouterLink>

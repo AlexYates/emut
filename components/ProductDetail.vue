@@ -3,7 +3,24 @@
     class="bg-gray-100 border flex flex-col md:flex-row overflow-hidden rounded-lg shadow-lg"
   >
     <div class="relative w-full md:w-1/2">
-      <PictureImages :images="product.images" />
+      <PictureImages
+        v-if="imageCurrent && imageCurrent.large"
+        :images="imageCurrent"
+      />
+      <ol
+        class="absolute bottom-0 flex items-center justify-center left-0 m-2 right-0"
+      >
+        <li
+          class="m-2"
+          v-for="(image, imageIndex) in product.images"
+          :key="imageIndex"
+        >
+          <PictureImages
+            class="border cursor-pointer flex h-16 overflow-hidden rounded-lg shadow-lg w-16"
+            :images="image"
+          />
+        </li>
+      </ol>
       <WishlistToggleButton
         class="absolute m-2 right-0 top-0"
         :product="product"
@@ -55,6 +72,16 @@ export default {
     price() {
       return currencyFormat(this.product.price)
     },
+  },
+  data() {
+    return {
+      imageCurrent: null,
+    }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.imageCurrent = this.product.images[0]
+    })
   },
 }
 </script>
