@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
-    "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/pwa": "^3.3.3",
     "@nuxtjs/svg": "^0.1.12",
     "cookie": "^0.4.1",
     "core-js": "^3.6.5",
