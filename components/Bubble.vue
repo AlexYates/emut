@@ -9,6 +9,7 @@
     >
       <h2 class="font-semibold mb-2 text-lg" v-text="title" />
       <slot name="default" />
+      <hr />
     </aside>
   </transition>
 </template>
@@ -18,6 +19,7 @@ export default {
   name: 'Bubble',
   props: {
     title: {
+      default: '',
       required: false,
       type: String,
     },

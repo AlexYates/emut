@@ -11,7 +11,8 @@
     "lint:js:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "test:unit": "jest --watch",
-    "test:e2e": "testcafe edge test/e2e/ --skip-js-errors",
+    "test:e2e": "testcafe",
+    "test:e2e:watch": "testcafe --live",
     "build:no-source": "nuxt build && del .nuxt/dist/**/*.js.map"
   },
   "dependencies": {
@@ -39,10 +40,12 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-testcafe": "^0.2.1",
     "jest": "^26.4.2",
     "lorem-ipsum": "^2.0.3",
     "prettier": "^2.2.0",
     "testcafe": "^1.9.4",
+    "testcafe-vue-selectors": "^3.1.0",
     "uuid": "^8.3.1",
     "vue-jest": "^3.0.4"
   }

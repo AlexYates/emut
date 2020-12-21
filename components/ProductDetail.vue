@@ -11,9 +11,9 @@
         class="absolute bottom-0 flex items-center justify-center left-0 m-2 right-0"
       >
         <li
-          class="m-2"
           v-for="(image, imageIndex) in product.images"
           :key="imageIndex"
+          class="m-2"
         >
           <PictureImages
             class="border cursor-pointer flex h-16 overflow-hidden rounded-lg shadow-lg w-16"
@@ -68,15 +68,15 @@ export default {
       type: Object,
     },
   },
-  computed: {
-    price() {
-      return currencyFormat(this.product.price)
-    },
-  },
   data() {
     return {
       imageCurrent: null,
     }
+  },
+  computed: {
+    price() {
+      return currencyFormat(this.product.price)
+    },
   },
   mounted() {
     this.$nextTick(() => {

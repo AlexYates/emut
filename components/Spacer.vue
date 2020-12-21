@@ -14,7 +14,6 @@ export default {
   computed: {
     classes() {
       switch (this.size) {
-        default:
         case 1:
           return 'm-1'
         case 2:
@@ -31,6 +30,8 @@ export default {
           return 'm-7'
         case 8:
           return 'm-8'
+        default:
+          return 'm-1'
       }
     },
   },

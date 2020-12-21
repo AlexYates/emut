@@ -5348,6 +5348,11 @@ eslint-plugin-standard@^4.1.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-4.1.0.tgz#0c3bf3a67e853f8bbbc580fb4945fbf16f41b7c5"
   integrity sha512-ZL7+QRixjTR6/528YNGyDotyffm5OQst/sGxKDwGb9Uqs4In5Egi4+jbobhqJoyoCM6/7v/1A5fhQ7ScMtDjaQ==
 
+eslint-plugin-testcafe@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-testcafe/-/eslint-plugin-testcafe-0.2.1.tgz#4089f646dadb69b1376a01d7e608184907e6036b"
+  integrity sha1-QIn2RtrbabE3agHX5ggYSQfmA2s=
+
 eslint-plugin-unicorn@^23.0.0:
   version "23.0.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-23.0.0.tgz#b2820212874735f9d91ecc8678b263ecfa6cf5f6"
@@ -11700,6 +11705,11 @@ testcafe-reporter-xunit@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/testcafe-reporter-xunit/-/testcafe-reporter-xunit-2.1.0.tgz#e6d66c572ce15af266706af0fd610b2a841dd443"
   integrity sha1-5tZsVyzhWvJmcGrw/WELKoQd1EM=
+
+testcafe-vue-selectors@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/testcafe-vue-selectors/-/testcafe-vue-selectors-3.1.0.tgz#3dccfc46b95aaa8455f457472a817cb8c8ae0938"
+  integrity sha512-BdJHD7Stns7ZXdQ1arahp2hcwkZ3u6Q2npYQgFMYHSyWDyExUdNSsYUmXg4EU7MrVXkAv+sE3eTvNmH1XeyrzA==
 
 testcafe@^1.9.4:
   version "1.9.4"

@@ -1,0 +1,12 @@
+{
+  "browsers": ["edge:headless"],
+  "screenshots": {
+    "fullPage": true,
+    "path": "test/e2e/screenshots/",
+    "pathPattern": "${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png",
+    "takeOnFails": true
+  },
+  "skipJsErrors": true,
+  "skipUncaughtErrors": true,
+  "src": "test/e2e/"
+}

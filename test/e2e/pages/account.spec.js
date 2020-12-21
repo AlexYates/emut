@@ -3,7 +3,7 @@ import { Selector } from 'testcafe'
 fixture`Account`.page`http://localhost:3000/account`
 
 test('Displays correct h1', async (t) => {
-  await t.expect(Selector('h1').innerText).eql(`Account`)
+  await t.expect(Selector('h1').textContent).eql(`Account`)
 })
 
 test('Text typing basics', async (t) => {
@@ -23,7 +23,7 @@ test('Text typing basics', async (t) => {
 
   await t
     .expect(
-      Selector('#account > section > div:nth-child(5) > button').innerText
+      (await Selector('#account > section > div:nth-child(5) > button').textContent).trim()
     )
     .eql('Sign out')
 })

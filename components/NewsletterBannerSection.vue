@@ -1,6 +1,8 @@
 <template>
   <aside class="bg-indigo-900" role="banner">
-    <div class="container flex flex-col md:flex-row items-end justify-center mx-auto p-4">
+    <div
+      class="container flex flex-col md:flex-row items-end justify-center mx-auto p-4"
+    >
       <div class="w-full lg:w-1/3">
         <h2 class="font-semibold mb-2 text-lg text-white">
           Sign up to our Newsletter

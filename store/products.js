@@ -1,7 +1,5 @@
-import { products as productsImported } from '../database'
-
 export const state = () => ({
-  products: productsImported,
+  products: null,
 })
 
 export const getters = {
@@ -23,6 +21,9 @@ export const mutations = {
   add: (state, product) => {
     state.products.push(product)
   },
+  load: (state, products) => {
+    state.products = products
+  },
   remove: (state, index) => {
     state.products.splice(index, 1)
   },
@@ -31,6 +32,9 @@ export const mutations = {
 export const actions = {
   add({ commit }, product) {
     commit('add', product)
+  },
+  load({ commit }, products) {
+    commit('load', products)
   },
   remove({ commit }, index) {
     commit('remove', index)

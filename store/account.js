@@ -4,7 +4,7 @@ export const state = () => ({
   account: {},
   hasError: false,
   inProgress: false,
-  motionActive: false,
+  motionActive: true,
   signedIn: false,
 })
 
