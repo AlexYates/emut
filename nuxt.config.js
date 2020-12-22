@@ -10,6 +10,7 @@ import modern from './config/modern.js'
 import netlify from './config/netlify.js'
 import plugins from './config/plugins.js'
 import pwa from './config/pwa.js'
+import tailwindcss from './config/tailwindcss.js'
 import target from './config/target.js'
 
 export default {
@@ -25,5 +26,6 @@ export default {
   netlify,
   plugins,
   pwa,
+  tailwindcss,
   target,
 }
