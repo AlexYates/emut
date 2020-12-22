@@ -23,7 +23,10 @@ test('Text typing basics', async (t) => {
 
   await t
     .expect(
-      (await Selector('#account > section > div:nth-child(5) > button').textContent).trim()
+      (
+        await Selector('#account > section > div:nth-child(5) > button')
+          .textContent
+      ).trim()
     )
     .eql('Sign out')
 })

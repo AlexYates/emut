@@ -1,6 +1,6 @@
 <template>
   <label
-    class="border cursor-pointer flex items-center justify-center m-2 p-2 rounded-full shadow-lg"
+    class="focus:bg-indigo-400 hover:bg-indigo-400 border cursor-pointer flex items-center justify-center m-2 p-2 rounded-full shadow-lg focus:text-white hover:text-white"
     :class="styling.classes"
     for="toggle"
     title="Toggle in wishlist"
@@ -42,7 +42,7 @@ export default {
     styling() {
       return this.exists(this.product.uuid)
         ? {
-            classes: 'bg-indigo-700',
+            classes: 'bg-indigo-700 text-white',
             styles: 'fill: white;',
           }
         : {

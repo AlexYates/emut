@@ -1,6 +1,6 @@
 <template>
   <button
-    class="bg-indigo-700 border flex items-center justify-center p-2 rounded-lg shadow-lg text-lg text-white"
+    class="bg-indigo-700 focus:bg-indigo-400 hover:bg-indigo-400 border flex items-center justify-center p-2 rounded-lg shadow-lg text-lg text-white"
     @click.prevent="signOut"
     @keypress.enter="signOut"
   >
