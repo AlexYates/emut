@@ -20,7 +20,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/svg": "^0.1.12",
     "cookie": "^0.4.1",
-    "core-js": "^3.9.1",
+    "core-js": "^3.11.2",
     "js-cookie": "^2.2.1",
     "nuxt": "^2.15.3",
     "secure-ls": "^1.2.6",
