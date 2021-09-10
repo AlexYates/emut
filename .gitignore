@@ -91,3 +91,6 @@ sw.*
 
 # Phosphor Icons Git sub-module
 phosphor-icons/
+
+# VSCode
+.vscode
