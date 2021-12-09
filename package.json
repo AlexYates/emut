@@ -24,7 +24,7 @@
     "js-cookie": "^3.0.1",
     "nuxt": "^2.15.3",
     "secure-ls": "^1.2.6",
-    "vuelidate": "^0.7.6",
+    "vuelidate": "^0.7.7",
     "vuex-persistedstate": "^4.0.0"
   },
   "devDependencies": {
