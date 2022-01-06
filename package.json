@@ -41,7 +41,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-testcafe": "^0.2.1",
-    "jest": "^27.1.1",
+    "jest": "^27.4.7",
     "lorem-ipsum": "^2.0.3",
     "prettier": "^2.3.2",
     "testcafe": "^1.13.0",
